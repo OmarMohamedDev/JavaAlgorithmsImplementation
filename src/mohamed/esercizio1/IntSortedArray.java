@@ -9,18 +9,19 @@ public class IntSortedArray {
     /**
      * Partially filled array that will contains the elements
      */
-    private int[] elements;
+    protected int[] elements;
 
     /**
      * Number of elements that are actually inside the "elements" array
      */
-    private int size;
+    protected int size;
 
     /**
      * Public constructor that initialize the elements array of 16 elements
      */
     public IntSortedArray(){
         elements = new int[16];
+        size = 0;
     }
 
     /**
@@ -34,6 +35,8 @@ public class IntSortedArray {
             elements = new int[initialCapacity];
         else
             throw new IllegalArgumentException("You cannot initialize the array with a negative number");
+
+        size = 0;
     }
 
     /**
@@ -64,7 +67,7 @@ public class IntSortedArray {
      * @return the position of the element if is already inside the array,
      * the position where we want to insert it otherwise.
      */
-    private int binarySearch(int x){
+    protected int binarySearch(int x){
         int inf = 0;
         int sup = size() -1;
 
@@ -145,17 +148,18 @@ public class IntSortedArray {
     public String toString(){
         String arrayElements = "[";
 
-        for(int i=0; i<size()-1; i++)
-            arrayElements += elements[i]+", ";
+        for(int i=0; i<size(); i++) {
+            arrayElements += elements[i];
 
-        //We insert the last element in this way to avoid the comma for it
-        arrayElements += elements[size()-1]+"]";
+            //We insert this check in the way to understand if we have to put a comma or not after the number
+            if (i + 1 != size())
+                arrayElements += ", ";
+        }
+
+        arrayElements += "]";
 
         return arrayElements;
     }
-
-
-
 
 
 }
