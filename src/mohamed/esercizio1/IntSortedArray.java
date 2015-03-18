@@ -104,7 +104,13 @@ public class IntSortedArray {
     public int insert(int x){
         int i = 0;
         int result = binarySearch(x);
-        int position = -1 - result;
+        int position;
+
+        //If the result is smaller than 0, means that the element wasn't present in the array
+        if(result < 0)
+            position = -1 - result;
+        else
+            position = result;
 
         //If the array is full
         if(size() == elements.length){

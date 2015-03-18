@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="975511d0-b835-48b8-8c18-e553d8eecd7b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/laboratoriodialgoritmi/mohamed/esercizio1/IntSortedArray.class" afterPath="$PROJECT_DIR$/out/production/laboratoriodialgoritmi/mohamed/esercizio1/IntSortedArray.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/laboratoriodialgoritmi/mohamed/esercizio1/IntSortedArrayTest.class" afterPath="$PROJECT_DIR$/out/production/laboratoriodialgoritmi/mohamed/esercizio1/IntSortedArrayTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mohamed/esercizio1/IntSortedArray.java" afterPath="$PROJECT_DIR$/src/mohamed/esercizio1/IntSortedArray.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mohamed/esercizio1/IntSortedArrayTest.java" afterPath="$PROJECT_DIR$/src/mohamed/esercizio1/IntSortedArrayTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/laboratoriodialgoritmi.iml" afterPath="$PROJECT_DIR$/laboratoriodialgoritmi.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laboratoriodialgoritmi.iws" />
@@ -42,25 +42,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IntSortedArray.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IntSortedArray.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mohamed/esercizio1/IntSortedArray.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37560976" vertical-offset="1496" max-vertical-offset="2535">
-              <caret line="112" column="32" selection-start-line="112" selection-start-column="32" selection-end-line="112" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1377" max-vertical-offset="2625">
+              <caret line="108" column="93" selection-start-line="108" selection-start-column="93" selection-end-line="108" selection-end-column="93" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IntSortedArrayTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IntSortedArrayTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mohamed/esercizio1/IntSortedArrayTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1795" max-vertical-offset="2205">
-              <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.70731705" vertical-offset="1705" max-vertical-offset="2115">
+              <caret line="137" column="59" selection-start-line="137" selection-start-column="59" selection-end-line="137" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#423#424#0" expanded="true" />
-                <element signature="e#465#466#0" expanded="true" />
+                <element signature="e#297#298#0" expanded="true" />
+                <element signature="e#339#340#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,8 +75,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/mohamed/esercizi-consegnati.txt" />
-        <option value="$PROJECT_DIR$/src/mohamed/esercizio1/IntSortedArrayTest.java" />
         <option value="$PROJECT_DIR$/src/mohamed/esercizio1/IntSortedArray.java" />
+        <option value="$PROJECT_DIR$/src/mohamed/esercizio1/IntSortedArrayTest.java" />
       </list>
     </option>
   </component>
@@ -513,12 +513,12 @@
       <updated>1426516429075</updated>
       <workItem from="1426516431462" duration="431000" />
       <workItem from="1426516873617" duration="9988000" />
-      <workItem from="1426683630637" duration="1197000" />
+      <workItem from="1426683630637" duration="2490000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11616000" />
+    <option name="totallyTimeSpent" value="12909000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="743" extended-state="6" />
@@ -544,7 +544,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2591508" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24670571" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3276923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32923076" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -601,8 +601,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#423#424#0" expanded="true" />
-            <element signature="e#465#466#0" expanded="true" />
+            <element signature="e#297#298#0" expanded="true" />
+            <element signature="e#339#340#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -630,23 +630,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mohamed/esercizio1/IntSortedArrayTest.java">
+    <entry file="file://$PROJECT_DIR$/src/mohamed/esercizio1/IntSortedArray.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1795" max-vertical-offset="2205">
-          <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#423#424#0" expanded="true" />
-            <element signature="e#465#466#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="1377" max-vertical-offset="2625">
+          <caret line="108" column="93" selection-start-line="108" selection-start-column="93" selection-end-line="108" selection-end-column="93" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mohamed/esercizio1/IntSortedArray.java">
+    <entry file="file://$PROJECT_DIR$/src/mohamed/esercizio1/IntSortedArrayTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37560976" vertical-offset="1496" max-vertical-offset="2535">
-          <caret line="112" column="32" selection-start-line="112" selection-start-column="32" selection-end-line="112" selection-end-column="32" />
-          <folding />
+        <state vertical-scroll-proportion="0.70731705" vertical-offset="1705" max-vertical-offset="2115">
+          <caret line="137" column="59" selection-start-line="137" selection-start-column="59" selection-end-line="137" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#297#298#0" expanded="true" />
+            <element signature="e#339#340#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

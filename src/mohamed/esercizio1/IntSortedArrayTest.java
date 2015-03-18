@@ -14,14 +14,6 @@ public class IntSortedArrayTest {
     public IntSortedArrayTest() {
     }
 
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
-
     @Before
     public void setUp() {
         isr = new IntSortedArray();
@@ -140,7 +132,9 @@ public class IntSortedArrayTest {
         isr.insert(1);
         isr.insert(5);
         isr.insert(3);
-        assertEquals("[1, 3, 3, 5]", isr.toString());
+        isr.insert(1);
+        isr.insert(5);
 
+        assertEquals("[1, 1, 3, 3, 5, 5]", isr.toString());
     }
 }
