@@ -1,5 +1,0 @@
-componenti gruppo: Omar Mohamed
-esercizio, punti attesi, eventuali scelte
-1, 5, array ordinato di interi parzialmente riempito
-
-totale punti attesi: 5

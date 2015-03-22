@@ -1,9 +1,6 @@
-package mohamed.esercizio1;
+package mohamed.binarysearch;
 
 import org.junit.*;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 
 import static org.junit.Assert.*;
 

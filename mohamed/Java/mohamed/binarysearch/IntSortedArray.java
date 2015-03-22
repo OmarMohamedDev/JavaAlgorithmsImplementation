@@ -1,4 +1,4 @@
-package mohamed.esercizio1;
+package mohamed.binarysearch;
 
 /**
  *
