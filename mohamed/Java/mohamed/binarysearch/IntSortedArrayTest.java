@@ -84,6 +84,19 @@ public class IntSortedArrayTest {
     }
 
     @Test
+    public void testIndexOfEmptyArray(){
+        assertEquals(-1, isr.indexOf(5));
+    }
+
+    @Test
+    public void testIndexOfContainingElement(){
+        isr.insert(1);
+        isr.insert(2);
+        isr.insert(5);
+        assertEquals(2, isr.indexOf(5));
+    }
+
+    @Test
     public void testInsertSomeInsertions() {
         assertEquals(0, isr.insert(1));
         assertEquals(1, isr.insert(5));

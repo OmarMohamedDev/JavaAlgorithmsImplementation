@@ -1,5 +1,7 @@
 package mohamed.binarysearch;
 
+import javax.xml.namespace.QName;
+
 /**
  *
  * @author Omar Mohamed
@@ -105,6 +107,16 @@ public class IntSortedArray {
             i++;
         }
         elements = newElements;//replace the new array with the old one
+    }
+
+    /**
+     * Method that use the binary search to return the index of an element or -1 if the element is not present
+     * @param x the element that we want to search inside the array
+     * @return the index of the element passed as parameter, -1 otherwise
+     */
+    public int indexOf(int x){
+        int result = binarySearch(x);
+        return result >=0 ? result : -1;
     }
 
     /**
