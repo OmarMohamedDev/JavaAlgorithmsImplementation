@@ -55,6 +55,14 @@ public class IntSortedArrayTest {
     }
 
     @Test
+    public void testReallocate(){
+        isr.reallocate();
+        int result = isr.elements.length;
+        int expResult = 32;
+        assertEquals(result, expResult);
+    }
+
+    @Test
     public void testSizeEmptyArray() {
         int expResult = 0;
         int result = isr.size();

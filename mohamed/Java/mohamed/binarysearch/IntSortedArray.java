@@ -93,6 +93,19 @@ public class IntSortedArray {
         return -(inf+1);
 
     }
+    /**
+     * Method that permit to reallocate the elements array in another one
+     * that will be the double of the previous dimension
+     */
+    protected void reallocate(){
+        int i = 0;
+        int newElements[] = new int[2 * elements.length];
+        while (i < elements.length) {
+            newElements[i] = elements[i];//copying all the elements in the original order
+            i++;
+        }
+        elements = newElements;//replace the new array with the old one
+    }
 
     /**
      * Method that insert the element x in elements keeping the array ordered.
@@ -110,12 +123,7 @@ public class IntSortedArray {
         //If the array is full
         if(size() == elements.length){
             //Creating an array that is the double of the first one
-            int newElements[] = new int[2 * size()];
-            while (i < size()) {
-                newElements[i] = elements[i];//copying all the elements in the original order
-                i++;
-            }
-            elements = newElements;//replace the new array with the old one
+            reallocate();
         }
 
         for (i = size() - 1; i >= position; i--) {
