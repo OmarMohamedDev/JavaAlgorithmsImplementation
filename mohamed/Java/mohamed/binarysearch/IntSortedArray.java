@@ -1,7 +1,5 @@
 package mohamed.binarysearch;
 
-import javax.xml.namespace.QName;
-
 /**
  *
  * @author Omar Mohamed
@@ -162,7 +160,7 @@ public class IntSortedArray {
 
 
     /**
-     * Ovveride of the Object toString() method
+     * Override of the Object toString() method
      * @return a string that represent the array elements
      */
     @Override
