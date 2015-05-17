@@ -1,5 +1,7 @@
 package mohamed.sort;
 
+import mohamed.binarysearch.IntSortedArray;
+
 /**
  *
  * @author Omar Mohamed
@@ -22,6 +24,24 @@ public class Sorting {
         int temp = a[first];
         a[first] = a[second];
         a[second] = temp;
+    }
+
+    /**
+     * Method that impelements a particular version of the binary search that
+     * returns always the index where we want to insert the element, in the most right possible position
+     * in the way to guarantee the stability of the search
+     * @param x the element that we want to search
+     * @return the position of the element
+     */
+    static int binarySearch(int x, int[] a, int ini, int end) {
+        if(x < a[ini]) return ini;
+        if(x >= a[end]) return end+1;
+        while(ini <= end) {
+            int mid = (ini + end) >>> 1;
+            if(x < a[mid]) end = mid-1;
+            else ini = mid+1;
+        }
+        return ini;
     }
 
     /**
@@ -64,7 +84,7 @@ public class Sorting {
     }
 
     /**
-     * Basic version of the insertion sort
+     * Basic version of the insertion sort using the for cycle
      * @param a array that have to be ordered
      */
     public static void isort(int[] a){
@@ -88,6 +108,19 @@ public class Sorting {
      * @param a array that have to be ordered
      */
     public static void isortBin(int[] a){
+        int n = a.length;
+        if(n == 0) return;
+        int start = 1; // cerca il primo elemento non in ordine
+        while (start < n && a[start] >= a[start-1]) start++;
+        if (start == n) return; // l'array è già ordinato
+        for(int i = start; i < n; i++) {
+            int x = a[i];
+            int iInser = binarySearch(x, a, 0, i - 1);
+            for(int j = i; j > iInser; j--) {
+                a[j] = a[j-1];
+            }
+            a[iInser] = x;
+        }
 
     }
 

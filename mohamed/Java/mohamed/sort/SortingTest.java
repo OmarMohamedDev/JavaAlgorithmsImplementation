@@ -124,7 +124,7 @@ public class SortingTest {
 
     @Test
     public void testISortUnsortedArray() {
-        Sorting.ssort(unsortedArray);
+        Sorting.isort(unsortedArray);
         assertTrue(Sorting.isSorted(unsortedArray));
 
     }
@@ -132,6 +132,47 @@ public class SortingTest {
     @Test
     public void testISortRandomArray() {
         Sorting.isort(randomArray);
+        assertTrue(Sorting.isSorted(randomArray));
+    }
+
+    /**
+     * Test of a particular version of the insertion sort that use the binary search method of the Sorting class
+     */
+    @Test
+    public void testISortBinArrayLengthZeroArray() {
+        Sorting.isortBin(lengthZeroArray);
+        assertTrue(Sorting.isSorted(lengthZeroArray));
+    }
+
+    @Test
+    public void testISortBinLengthOneArray() {
+        Sorting.isortBin(lengthZeroArray);
+        assertTrue(Sorting.isSorted(lengthOneArray));
+    }
+
+    @Test
+    public void testISortBinSortedArray() {
+        Sorting.isortBin(sortedArray);
+        assertTrue(Sorting.isSorted(sortedArray));
+    }
+
+    @Test
+    public void testISortBinReverseSortedArray() {
+        Sorting.isortBin(reverseSortedArray);
+        assertTrue(Sorting.isSorted(reverseSortedArray));
+
+    }
+
+    @Test
+    public void testISortBinUnsortedArray() {
+        Sorting.isortBin(unsortedArray);
+        assertTrue(Sorting.isSorted(unsortedArray));
+
+    }
+
+    @Test
+    public void testISortBinRandomArray() {
+        Sorting.isortBin(randomArray);
         assertTrue(Sorting.isSorted(randomArray));
     }
 
