@@ -53,6 +53,8 @@ public class IntSortedArray {
         size = a.length;
     }
 
+    //Public methods
+
     /**
      * Method that returns the number of elements inside the array
      * @return the actual number of elements
@@ -61,51 +63,6 @@ public class IntSortedArray {
         return size;
     }
 
-    /**
-     * Implements the iterative binary search
-     * @param x the element that we want search or add, if is not present
-     * @return the position of the element if is already inside the array,
-     * the position where we want to insert it otherwise.
-     */
-    protected int binarySearch(int x){
-        int inf = 0;
-        int sup = size() -1;
-
-        //If the array is empty or the element x is smaller than the first
-        //one, we return -1 to put it in the first position
-        if(sup == -1 || x < elements[0]) return -1;
-
-        //If the element x is smaller than the last one, we return -(size()+1)
-        //in the way to put in the last position
-        if(x > elements[sup]) return -(size()+1);
-
-        while(inf <= sup){
-            int i = (inf + sup)>>>1;
-
-            if(x < elements[i])
-                sup = i-1;
-            else if(x > elements[i])
-                inf = i+1;
-            else
-                return i;
-        }
-
-        return -(inf+1);
-
-    }
-    /**
-     * Method that permit to reallocate the elements array in another one
-     * that will be the double of the previous dimension
-     */
-    protected void reallocate(){
-        int i = 0;
-        int newElements[] = new int[2 * elements.length];
-        while (i < elements.length) {
-            newElements[i] = elements[i];//copying all the elements in the original order
-            i++;
-        }
-        elements = newElements;//replace the new array with the old one
-    }
 
     /**
      * Method that use the binary search to return the index of an element or -1 if the element is not present
@@ -178,6 +135,54 @@ public class IntSortedArray {
         arrayElements += "]";
 
         return arrayElements;
+    }
+
+    //Protected Methods
+
+    /**
+     * Implements the iterative binary search
+     * @param x the element that we want search or add, if is not present
+     * @return the position of the element if is already inside the array,
+     * the position where we want to insert it otherwise.
+     */
+    protected int binarySearch(int x){
+        int inf = 0;
+        int sup = size() -1;
+
+        //If the array is empty or the element x is smaller than the first
+        //one, we return -1 to put it in the first position
+        if(sup == -1 || x < elements[0]) return -1;
+
+        //If the element x is smaller than the last one, we return -(size()+1)
+        //in the way to put in the last position
+        if(x > elements[sup]) return -(size()+1);
+
+        while(inf <= sup){
+            int i = (inf + sup)>>>1;
+
+            if(x < elements[i])
+                sup = i-1;
+            else if(x > elements[i])
+                inf = i+1;
+            else
+                return i;
+        }
+
+        return -(inf+1);
+
+    }
+    /**
+     * Method that permit to reallocate the elements array in another one
+     * that will be the double of the previous dimension
+     */
+    protected void reallocate(){
+        int i = 0;
+        int newElements[] = new int[2 * elements.length];
+        while (i < elements.length) {
+            newElements[i] = elements[i];//copying all the elements in the original order
+            i++;
+        }
+        elements = newElements;//replace the new array with the old one
     }
 
 

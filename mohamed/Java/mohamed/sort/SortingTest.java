@@ -340,4 +340,169 @@ public class SortingTest {
         assertTrue(Sorting.isSorted(randomArray));
     }
 
+    /**
+     * Test of the method that implements the basic version of the quicksort of the Sorting class
+     */
+    @Test
+    public void testQsortBasicArrayLengthZeroArray() {
+        Sorting.qsortBasic(lengthZeroArray);
+        assertTrue(Sorting.isSorted(lengthZeroArray));
+    }
+
+    @Test
+    public void testQsortBasicLengthOneArray() {
+        Sorting.qsortBasic(lengthZeroArray);
+        assertTrue(Sorting.isSorted(lengthOneArray));
+    }
+
+    @Test
+    public void testQsortBasicSortedArray() {
+        Sorting.qsortBasic(sortedArray);
+        assertTrue(Sorting.isSorted(sortedArray));
+    }
+
+    @Test
+    public void testQsortBasicReverseSortedArray() {
+        Sorting.qsortBasic(reverseSortedArray);
+        assertTrue(Sorting.isSorted(reverseSortedArray));
+
+    }
+
+    @Test
+    public void testQsortBasicUnsortedArray() {
+        Sorting.qsortBasic(unsortedArray);
+        assertTrue(Sorting.isSorted(unsortedArray));
+
+    }
+
+    @Test
+    public void testQsortBasicRandomArray() {
+        Sorting.qsortBasic(randomArray);
+        assertTrue(Sorting.isSorted(randomArray));
+    }
+
+    /**
+     * Test of the method that implements the "Hoare" version of the quicksort of the Sorting class
+     */
+    @Test
+    public void testQsortHoareArrayLengthZeroArray() {
+        Sorting.qsortHoare(lengthZeroArray);
+        assertTrue(Sorting.isSorted(lengthZeroArray));
+    }
+
+    @Test
+    public void testQsortHoareLengthOneArray() {
+        Sorting.qsortHoare(lengthZeroArray);
+        assertTrue(Sorting.isSorted(lengthOneArray));
+    }
+
+    @Test
+    public void testQsortHoareSortedArray() {
+        Sorting.qsortHoare(sortedArray);
+        assertTrue(Sorting.isSorted(sortedArray));
+    }
+
+    @Test
+    public void testQsortHoareReverseSortedArray() {
+        Sorting.qsortHoare(reverseSortedArray);
+        assertTrue(Sorting.isSorted(reverseSortedArray));
+
+    }
+
+    @Test
+    public void testQsortHoareUnsortedArray() {
+        Sorting.qsortHoare(unsortedArray);
+        assertTrue(Sorting.isSorted(unsortedArray));
+
+    }
+
+    @Test
+    public void testQsortHoareRandomArray() {
+        Sorting.qsortHoare(randomArray);
+        assertTrue(Sorting.isSorted(randomArray));
+    }
+
+    /**
+     * Test of the method that implements the parallel version of the quicksort of the Sorting class
+     */
+    @Test
+    public void testParallelQuicksortArrayLengthZeroArray() {
+        Sorting.parallelQuicksort(lengthZeroArray);
+        assertTrue(Sorting.isSorted(lengthZeroArray));
+    }
+
+    @Test
+    public void testParallelQuicksortLengthOneArray() {
+        Sorting.parallelMergesort(lengthZeroArray);
+        assertTrue(Sorting.isSorted(lengthOneArray));
+    }
+
+    @Test
+    public void testParallelQuicksortSortedArray() {
+        Sorting.parallelQuicksort(sortedArray);
+        assertTrue(Sorting.isSorted(sortedArray));
+    }
+
+    @Test
+    public void testParallelQuicksortReverseSortedArray() {
+        Sorting.parallelQuicksort(reverseSortedArray);
+        assertTrue(Sorting.isSorted(reverseSortedArray));
+
+    }
+
+    @Test
+    public void testParallelQuicksortUnsortedArray() {
+        Sorting.parallelMergesort(unsortedArray);
+        assertTrue(Sorting.isSorted(unsortedArray));
+
+    }
+
+    @Test
+    public void testParallelQuicksortRandomArray() {
+        Sorting.parallelQuicksort(randomArray);
+        assertTrue(Sorting.isSorted(randomArray));
+    }
+
+    /**
+     * Test of the method that implements the basic version of the heapsort of the Sorting class
+     */
+    @Test
+    public void testHeapsortArrayLengthZeroArray() {
+        Sorting.hsort(lengthZeroArray);
+        assertTrue(Sorting.isSorted(lengthZeroArray));
+    }
+
+    @Test
+    public void testHeapsortLengthOneArray() {
+        Sorting.hsort(lengthZeroArray);
+        assertTrue(Sorting.isSorted(lengthOneArray));
+    }
+
+    @Test
+    public void testHeapsortSortedArray() {
+        Sorting.hsort(sortedArray);
+        assertTrue(Sorting.isSorted(sortedArray));
+    }
+
+    @Test
+    public void testHeapsortReverseSortedArray() {
+        Sorting.hsort(reverseSortedArray);
+        assertTrue(Sorting.isSorted(reverseSortedArray));
+
+    }
+
+    @Test
+    public void testHeapsortUnsortedArray() {
+        Sorting.hsort(unsortedArray);
+        assertTrue(Sorting.isSorted(unsortedArray));
+
+    }
+
+    @Test
+    public void testHeapsortRandomArray() {
+        Sorting.hsort(randomArray);
+        assertTrue(Sorting.isSorted(randomArray));
+    }
+
+
 }

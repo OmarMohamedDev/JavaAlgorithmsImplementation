@@ -7,6 +7,7 @@ import static java.lang.System.getProperty;
 import static java.lang.System.nanoTime;
 import static mohamed.sort.Sorting.*;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,6 +16,13 @@ import java.util.Random;
 import java.util.EnumSet;
 
 public class SortTiming {
+
+    /**
+     * Private Constructor
+     */
+    private SortTiming(){
+
+    }
 
     static int[] naturalRandomArray(int len, int maxVal) {
         int[] a = new int[len];
@@ -30,9 +38,11 @@ public class SortTiming {
     }
 
     static enum Algorithm {
-        SSORT, ISORT,
-        MSORT, MSORT_INS, MSORT_ALT, PAR_MSORT,
-        QSORT, PAR_QSORT,
+        SSORT,
+        ISORT, ISORT_BIN,
+        MSORT_BASIC, MSORT_NO_GAR, MSORT_ALT, PAR_MSORT,
+        QSORT_BASIC, QSORT_HOARE, PAR_QSORT,
+        HSORT,
         JAVASORT, JAVASORT_PAR;
     }
 
@@ -40,28 +50,31 @@ public class SortTiming {
         switch(algo) {
             case SSORT: ssort(a); break;
             case ISORT: isort(a); break;
-         //   case MSORT: msortBasicEcologic(a); break;
-         //   case MSORT_INS: msortIns(a); break;
+            case ISORT_BIN: isortBin(a); break;
+            case MSORT_BASIC: msortBasic(a); break;
+            case MSORT_NO_GAR: msortNoGarbage(a); break;
             case MSORT_ALT: msortAlt(a); break;
-         //   case PAR_MSORT: parallelMergeSort(a); break;
-            case QSORT: qsortHoareIsort(a); break;
+            case PAR_MSORT: parallelMergesort(a); break;
+            case QSORT_BASIC: qsortBasic(a); break;
+            case QSORT_HOARE: qsortHoare(a); break;
             case PAR_QSORT: parallelQuicksort(a); break;
+            case HSORT: hsort(a); break;
             case JAVASORT: Arrays.sort(a); break;
             case JAVASORT_PAR: Arrays.parallelSort(a); break;
         }
     }
 
     static EnumSet<Algorithm> quadraticVsOptimal =
-            EnumSet.range(Algorithm.SSORT, Algorithm.MSORT);
+            EnumSet.range(Algorithm.SSORT, Algorithm.MSORT_BASIC);
 
     static EnumSet<Algorithm> optimal =
-            EnumSet.range(Algorithm.MSORT, Algorithm.JAVASORT_PAR);
+            EnumSet.range(Algorithm.MSORT_BASIC, Algorithm.JAVASORT_PAR);
 
     static double executionTime(Algorithm algo, int[] a) {
         long t1 = nanoTime();
         sort(algo, a);
         long t2 = nanoTime();
-        if(!isSorted(a)) throw new RuntimeException("non ha ordinato");
+        if(!isSorted(a)) throw new RuntimeException("not ordered");
         return (t2 - t1)/1E6;
     }
 
@@ -94,11 +107,11 @@ public class SortTiming {
      * eseguendo tutti gli algoritmi su array di lunghezze via via crescenti,
      * da step fino a maxLength
      */
-    static void makeTable(EnumSet<Algorithm> algorithms, int step, int maxLength, String fileName) throws IOException {
+    static void makeTable(EnumSet<Algorithm> algorithms, int step, int maxLength, String fileName) throws IOException {;
         FileWriter outFile = new FileWriter(fileName, false);
         PrintWriter writer = new PrintWriter(outFile);
         writer.println("sep=;");
-        writer.println("Prova a su array di interi: " + getProperty("os.name") + " Java "+ getProperty("java.version"));
+        writer.println("Test a on a int array: " + getProperty("os.name") + " Java "+ getProperty("java.version"));
         for(SequenceKind kind: SequenceKind.values()) {
             writer.println(kind.toString());
             System.out.println(kind.toString() + "\n");
@@ -117,6 +130,6 @@ public class SortTiming {
     public static void main(String[] args) throws IOException {
         makeTable(quadraticVsOptimal, 50000, 150000, "quadraticTimes.csv");
         makeTable(optimal, 100000, 2000000, "optimalTimes.csv");
-        System.out.println("finito!");
+        System.out.println("end!");
     }
 }

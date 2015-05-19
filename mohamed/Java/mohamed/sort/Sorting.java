@@ -1,5 +1,6 @@
 package mohamed.sort;
 
+import java.util.Random;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveAction;
 
@@ -10,37 +11,189 @@ import java.util.concurrent.RecursiveAction;
 public class Sorting {
 
     /**
-     * Inner class used by the parallel mergesort method
+     * Object used to generate random numbers in some method (as the quicksort)
      */
-    static class ParallelMergeSorter extends RecursiveAction {
-        int[] a, aux;
-        int first, last;
-        int numThreads; // number of the threads still available
-        ParallelMergeSorter(int[] a, int f, int l, int[] aux, int n){
-            this.a = a; this.aux = aux;
-            first = f; last = l; numThreads = n;
-        }
-        @Override
-        protected void compute() {
-            if(first >= last) return;
-            if(numThreads <= 1) msortNoGarbageIntern(a, first, last, aux); //Calling the sequential version of the msort
-            else {
-                int m = (first + last)/2;
-                ParallelMergeSorter left =
-                        new ParallelMergeSorter(a, first, m, aux, numThreads/2);
-                ParallelMergeSorter right =
-                        new ParallelMergeSorter(a, m+1, last, aux, numThreads/2);
-                invokeAll(left, right);
-                mergeNoGarbage(a, first, m, last, aux);
-            }
-        }
-    }
+    static Random randomGenerator = new Random();
 
     /**
      * Private constructor
      */
     private Sorting(){
     }
+
+    //Methods visible publicly
+
+    /**
+     * Check if the array is sorted or not
+     * @param a the array that we want to check
+     * @return true if the array is sorted, false otherwise
+     */
+    public static boolean isSorted(int[] a){
+        //Length of the array
+        int n = a.length;
+
+        //The array is less than two elements: so it is already sorted
+        if(n < 2)
+            return true;
+
+        //Checking if all the elements of the array are ordered or not
+        for(int i=1; i< a.length; i++)
+            if(!(a[i]>=a[i-1]))
+                return false;
+
+        return true;
+
+    }
+
+    /**
+     * Basic version of the selection sort
+     * @param a array that have to be ordered
+     */
+    public static void ssort(int[] a){
+
+        int n = a.length;
+        for(int i = 0; i < n-1; i++){
+            int iMin = i;
+            for(int j = i+1; j < n; j++) {
+                if (a[j] < a[iMin])
+                    iMin = j;
+            }
+            swap(a, i, iMin);
+        }
+    }
+
+    /**
+     * Basic version of the insertion sort using the for cycle
+     * @param a array that have to be ordered
+     */
+    public static void isort(int[] a){
+        int n = a.length;
+
+        for(int i= 1; i < n; i++){
+            int x = a[i];
+
+            int j;
+            for(j= i; j > 0; j--){
+                if(x >= a[j-1]) break;
+                a[j] = a[j-1];
+            }
+            a[j] = x;
+        }
+
+    }
+
+    /**
+     * Version of the insertion sort that use the binary search
+     * @param a array that have to be ordered
+     */
+    public static void isortBin(int[] a){
+        int n = a.length;
+        if(n == 0) return;
+        int start = 1; // cerca il primo elemento non in ordine
+        while (start < n && a[start] >= a[start-1]) start++;
+        if (start == n) return; // l'array è già ordinato
+        for(int i = start; i < n; i++) {
+            int x = a[i];
+            int iInser = binarySearch(x, a, 0, i - 1);
+            for(int j = i; j > iInser; j--) {
+                a[j] = a[j-1];
+            }
+            a[iInser] = x;
+        }
+
+    }
+
+    /**
+     * Method that implements the basic version of the mergesort
+     * @param a array that have to be ordered
+     */
+    public static void msortBasic(int[] a){
+        msortBasicIntern(a, 0, a.length - 1);
+    }
+
+    /**
+     * Method that implements a version of the mergesort with an auxiliary array
+     * and an optimized merge
+     * @param a array that have to be ordered
+     */
+    public static void msortNoGarbage(int[] a){
+        int n = a.length;
+        int[] aux = new int[n];
+        msortNoGarbageIntern(a, 0, n - 1, aux);
+    }
+
+    /**
+     * Alternative version of the mergesort that use alternatively the original array
+     * and the auxiliary one.
+     * @param a array that have to be ordered
+     */
+    public static void msortAlt(int[] a){
+        int n = a.length;
+        int[] aux = new int[n];
+        msortAltIntern(a, 0, n - 1, aux);
+    }
+
+    /**
+     * Parallel version of the mergesort
+     * @param a array that have to be ordered
+     */
+    public static void parallelMergesort(int[] a){
+        int n = a.length-1;
+        int cores = Runtime.getRuntime().availableProcessors();
+        ForkJoinPool pool = ForkJoinPool.commonPool();
+        int[] aux = new int[a.length];
+        ParallelMergeSorter sorter =
+                new ParallelMergeSorter(a, 0, n, aux, cores);
+        pool.invoke(sorter);
+    }
+
+    /**
+     * Basic version of the quicksort (extracting a pivot)
+     * @param a array that have to be ordered
+     */
+    public static void qsortBasic(int[] a){
+        int n = a.length - 1;
+        qsortBasicIntern(a, 0, n);
+    }
+
+    /**
+     * Parallel version of the quicksort
+     * @param a array that have to be ordered
+     */
+    public static void parallelQuicksort(int[] a){
+        int n = a.length-1;
+        int cores = Runtime.getRuntime().availableProcessors();
+        ForkJoinPool pool = ForkJoinPool.commonPool();
+        ParallelQuickSorter sorter =
+                new ParallelQuickSorter(a, 0, n, cores);
+        pool.invoke(sorter);
+    }
+
+    /**
+     * Version of the "Hoare" quicksort
+     * @param a array that have to be ordered
+     */
+    public static void qsortHoare(int[] a){
+        int n = a.length - 1;
+        qsortHoareIntern(a, 0, n);
+    }
+
+    /**
+     * Basic version of the heapsort
+     * @param a array that have to be ordered
+     */
+    public static void hsort(int[] a){
+        int n = a.length;
+        for(int j = (n-2)/2; j >= 0; j--)
+            moveDown(a, j, n);
+        for(int i = n-1; i > 0; i--) {
+            swap(a, 0, i);
+            moveDown(a, 0, i);
+        }
+
+    }
+
+    //Methods visible in the package
 
     /**
      * Method that swap the value first and second inside the array a
@@ -176,168 +329,155 @@ public class Sorting {
     }
 
     /**
-     * Check if the array is sorted or not
-     * @param a the array that we want to check
-     * @return true if the array is sorted, false otherwise
-     */
-    public static boolean isSorted(int[] a){
-        //Length of the array
-        int n = a.length;
-
-        //The array is less than two elements: so it is already sorted
-        if(n < 2)
-            return true;
-
-        //Checking if all the elements of the array are ordered or not
-        for(int i=1; i< a.length; i++)
-            if(!(a[i]>=a[i-1]))
-                return false;
-
-        return true;
-
-    }
-
-    /**
-     * Basic version of the selection sort
+     * Not public method that implements a basic version of the quicksort (extracting a pivot)
      * @param a array that have to be ordered
+     * @param fst first element of the segment that have to be ordered
+     * @param lst last element of the segment that have to be ordered
      */
-    public static void ssort(int[] a){
+    static void qsortBasicIntern(int[] a, int fst, int lst){
+        if ((lst - fst + 1) > 1) {
 
-        int n = a.length;
-        for(int i = 0; i < n-1; i++){
-            int iMin = i;
-            for(int j = i+1; j < n; j++) {
-                if (a[j] < a[iMin])
-                    iMin = j;
+            int iPivot = fst + randomGenerator.nextInt(lst - fst + 1);
+            // moving the pivot in the head of the array
+            swap(a, fst, iPivot);
+
+            iPivot = fst;
+
+            int j = lst;
+            int i = fst + 1;
+            while (i <= j) {
+                if (a[i] >= a[iPivot]) {
+                    swap(a, i, j);
+                    j--;
+                } else {
+                    i++;
+                }
             }
-            swap(a, i, iMin);
+            swap(a, iPivot, j);
+            iPivot = j;
+
+            qsortBasicIntern(a, fst, iPivot - 1);
+            qsortBasicIntern(a, iPivot + 1, lst);
+
         }
     }
 
     /**
-     * Basic version of the insertion sort using the for cycle
+     * Not public method that implements the "Hoare" version of the quicksort
      * @param a array that have to be ordered
+     * @param fst first element of the segment that have to be ordered
+     * @param lst last element of the segment that have to be ordered
      */
-    public static void isort(int[] a){
-        int n = a.length;
-
-        for(int i= 1; i < n; i++){
-            int x = a[i];
-
-            int j;
-            for(j= i; j > 0; j--){
-                if(x >= a[j-1]) break;
-                a[j] = a[j-1];
-            }
-            a[j] = x;
+    static void qsortHoareIntern(int[] a, int fst, int lst){
+        if(fst < lst) {
+            int iPivot = fst + randomGenerator.nextInt(lst-fst + 1);
+            int x = a[iPivot];
+            int i = fst;
+            int j = lst;
+            do {
+                while(a[i] < x) i++;
+                while(a[j] > x) j--;
+                if(i <= j) {
+                    swap(a, i, j);
+                    i++; j--;
+                }
+            } while(i <= j);
+            qsortHoareIntern(a, fst, j);
+            qsortHoareIntern(a, i, lst);
         }
-
     }
 
     /**
-     * Version of the insertion sort that use the binary search
-     * @param a array that have to be ordered
+     * Method that implements the move down in a heap, used by the heapsort method
+     * @param a array that we want to modify
+     * @param i index of the element that we want to "move down"
+     * @param length length of the segment of the array used by the heap
      */
-    public static void isortBin(int[] a){
-        int n = a.length;
-        if(n == 0) return;
-        int start = 1; // cerca il primo elemento non in ordine
-        while (start < n && a[start] >= a[start-1]) start++;
-        if (start == n) return; // l'array è già ordinato
-        for(int i = start; i < n; i++) {
-            int x = a[i];
-            int iInser = binarySearch(x, a, 0, i - 1);
-            for(int j = i; j > iInser; j--) {
-                a[j] = a[j-1];
-            }
-            a[iInser] = x;
+    static void moveDown(int[] a, int i, int length){
+        int elem = a[i];
+        int j;
+
+        while((j = 2*i + 1) < length) {
+            if(j+1 < length && a[j+1] > a[j]) j++;
+            if(elem >= a[j]) break;
+            a[i] = a[j];
+                    i = j;
         }
+        a[i] = elem;
+    }
 
+    //Inner Classes
+
+    /**
+     * Inner class used by the parallel mergesort method
+     */
+    static class ParallelMergeSorter extends RecursiveAction {
+        int[] a, aux;
+        int first, last;
+        int numThreads; // number of the threads still available
+        ParallelMergeSorter(int[] a, int f, int l, int[] aux, int n){
+            this.a = a; this.aux = aux;
+            first = f; last = l; numThreads = n;
+        }
+        @Override
+        protected void compute() {
+            if(first >= last) return;
+            if(numThreads <= 1) msortNoGarbageIntern(a, first, last, aux); //Calling the sequential version of the msort
+            else {
+                int m = (first + last)/2;
+                ParallelMergeSorter left =
+                        new ParallelMergeSorter(a, first, m, aux, numThreads/2);
+                ParallelMergeSorter right =
+                        new ParallelMergeSorter(a, m+1, last, aux, numThreads/2);
+                invokeAll(left, right);
+                mergeNoGarbage(a, first, m, last, aux);
+            }
+        }
     }
 
     /**
-     * Method that implements the basic version of the mergesort
-     * @param a array that have to be ordered
+     * Inner class used by the parallel quicksort method
      */
-    public static void msortBasic(int[] a){
-        msortBasicIntern(a, 0, a.length - 1);
-    }
+    static class ParallelQuickSorter extends RecursiveAction {
+        int[] a;
+        int first, last;
+        int numThreads; // number of the threads still available
+        ParallelQuickSorter(int[] a, int f, int l, int n){
+            this.a = a;
+            first = f; last = l; numThreads = n;
+        }
+        @Override
+        protected void compute() {
+            if ((last - first + 1) <= 1) return; //Version with the early return
+            if(numThreads <= 1) qsortBasicIntern(a, first, last); //Calling the sequential version of the qsort
+            else {
+                   int iPivot = first + randomGenerator.nextInt(last - first + 1);
+                    // moving the pivot in the head of the array
+                    swap(a, first, iPivot);
 
-    /**
-     * Method that implements a version of the mergesort with an auxiliary array
-     * and an optimized merge
-     * @param a array that have to be ordered
-     */
-    public static void msortNoGarbage(int[] a){
-        int n = a.length;
-        int[] aux = new int[n];
-        msortNoGarbageIntern(a, 0, n - 1, aux);
-    }
+                    iPivot = first;
 
-    /**
-     * Alternative version of the mergesort that use alternatively the original array
-     * and the auxiliary one.
-     * @param a array that have to be ordered
-     */
-    public static void msortAlt(int[] a){
-        int n = a.length;
-        int[] aux = new int[n];
-        msortAltIntern(a, 0, n - 1, aux);
-    }
+                    int j = last;
+                    int i = first + 1;
+                    while (i <= j) {
+                        if (a[i] >= a[iPivot]) {
+                            swap(a, i, j);
+                            j--;
+                        } else {
+                            i++;
+                        }
+                    }
+                    swap(a, iPivot, j);
+                    iPivot = j;
 
-    /**
-     * Parallel version of the mergesort
-     * @param a array that have to be ordered
-     */
-    public static void parallelMergesort(int[] a){
-        int n = a.length-1;
-        int cores = Runtime.getRuntime().availableProcessors();
-        ForkJoinPool pool = ForkJoinPool.commonPool();
-        int[] aux = new int[a.length];
-        ParallelMergeSorter sorter =
-                new ParallelMergeSorter(a, 0, n, aux, cores);
-        pool.invoke(sorter);
-    }
+                    ParallelQuickSorter left =
+                            new ParallelQuickSorter(a, first, iPivot - 1, numThreads/2);
+                    ParallelQuickSorter right =
+                            new ParallelQuickSorter(a, iPivot + 1, last, numThreads/2);
+                    invokeAll(left, right);
+            }
 
-    /**
-     * Basic version of the quicksort (extracting a pivot)
-     * @param a array that have to be ordered
-     */
-    public static void qsortBasic(int[] a){
-
-    }
-
-    /**
-     * Parallel version of the quicksort
-     * @param a array that have to be ordered
-     */
-    public static void parallelQuicksort(int[] a){
-
-    }
-
-    /**
-     * Version of the "Hoare" quicksort
-     * @param a array that have to be ordered
-     */
-    public static void qsortHoare(int[] a){
-
-    }
-
-    /**
-     * Version of the "Hoare" quicksort, optimized with the insertion sort
-     * and without recursion tail
-     * @param a array that have to be ordered
-     */
-    public static  void qsortHoareIsort(int[] a){
-
-    }
-
-    /**
-     * Basic version of the heapsort
-     * @param a array that have to be ordered
-     */
-    public static void hsort(int[] a){
-
+        }
     }
 
 }
