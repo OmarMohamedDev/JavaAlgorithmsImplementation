@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="975511d0-b835-48b8-8c18-e553d8eecd7b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mohamed/Java/mohamed/binarysearch/IntSortedArray.java" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/binarysearch/IntSortedArray.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mohamed/Java/mohamed/sort/SortTiming.java" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/sort/SortTiming.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mohamed/Java/mohamed/sort/Sorting.java" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/sort/Sorting.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mohamed/Java/mohamed/sort/SortingTest.java" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/sort/SortingTest.java" />
-    </list>
+    <list default="true" id="975511d0-b835-48b8-8c18-e553d8eecd7b" name="Default" comment="" />
     <ignored path="laboratoriodialgoritmi.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -194,6 +189,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mohamed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laboratoriodialgoritmi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laboratoriodialgoritmi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mohamed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mohamed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="binarysearch" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -607,12 +628,12 @@
       <workItem from="1431201316999" duration="783000" />
       <workItem from="1431343320512" duration="1119000" />
       <workItem from="1431867779586" duration="9925000" />
-      <workItem from="1432056085754" duration="10903000" />
+      <workItem from="1432056085754" duration="11022000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59746000" />
+    <option name="totallyTimeSpent" value="59865000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="743" extended-state="6" />
