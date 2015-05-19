@@ -1,12 +1,40 @@
 package mohamed.sort;
 
-import mohamed.binarysearch.IntSortedArray;
+import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.RecursiveAction;
 
 /**
  *
  * @author Omar Mohamed
  */
 public class Sorting {
+
+    /**
+     * Inner class used by the parallel mergesort method
+     */
+    static class ParallelMergeSorter extends RecursiveAction {
+        int[] a, aux;
+        int first, last;
+        int numThreads; // number of the threads still available
+        ParallelMergeSorter(int[] a, int f, int l, int[] aux, int n){
+            this.a = a; this.aux = aux;
+            first = f; last = l; numThreads = n;
+        }
+        @Override
+        protected void compute() {
+            if(first >= last) return;
+            if(numThreads <= 1) msortNoGarbageIntern(a, first, last, aux); //Calling the sequential version of the msort
+            else {
+                int m = (first + last)/2;
+                ParallelMergeSorter left =
+                        new ParallelMergeSorter(a, first, m, aux, numThreads/2);
+                ParallelMergeSorter right =
+                        new ParallelMergeSorter(a, m+1, last, aux, numThreads/2);
+                invokeAll(left, right);
+                mergeNoGarbage(a, first, m, last, aux);
+            }
+        }
+    }
 
     /**
      * Private constructor
@@ -42,6 +70,109 @@ public class Sorting {
             else ini = mid+1;
         }
         return ini;
+    }
+
+    /**
+     * Method that implements the merge of an two adjacent segements in an array
+     * @param a array that contains the segments
+     * @param fst index that represent the left extreme of the segment
+     * @param mid index that represent the middle of the segment
+     * @param lst index that represent the right extreme of the segment
+     */
+    static void mergeBasic(int[] a, int fst, int mid, int lst) {
+        int n = lst - fst + 1;
+        int i,j,k;
+        int[] c = new int[n];
+        i = fst; j = mid+1; k = 0;
+        while(i <= mid && j <= lst) {
+            c[k++] = a[i]<= a[j] ? a[i++] : a[j++];
+        }
+        while(i <= mid) c[k++] = a[i++];
+        while(j <= lst) c[k++] = a[j++];
+        for(int h = 0; h < n; h++) a[fst + h] = c[h];
+    }
+
+    /**
+     * Method that implements an optimized version of the merge of an two adjacent
+     * segements in an array using an auxiliary array
+     * @param a array that contains the segments
+     * @param fst index that represent the left extreme of the segment
+     * @param mid index that represent the middle of the segment
+     * @param lst index that represent the right extreme of the segment
+     * @param aux auxiliary array used during the merge
+     */
+    static void mergeNoGarbage(int[] a, int fst, int mid, int lst, int[] aux) {
+        int i = fst, j = mid+1, k = fst;
+        while(i <= mid && j <= lst) {
+            aux[k++] = a[i]<= a[j] ? a[i++] : a[j++];
+        }
+        for(int h = mid, l = lst; h >= i;) a[l--] = a[h--];
+        for(int r = fst; r < k; r++) a[r] = aux[r];
+    }
+
+    /**
+     * Method that implements an alternative version of the merge of two adjacent
+     * segements in an array using an auxiliary array and using both two avoid
+     * to copy all the time one in another
+     * @param a array that contains the segments
+     * @param fst index that represent the left extreme of the segment
+     * @param mid index that represent the middle of the segment
+     * @param lst index that represent the right extreme of the segment
+     * @param aux auxiliary array used during the merge
+     */
+    static void mergeAlt(int[] a, int fst, int mid, int lst, int[] aux) {
+        int i = fst, j = mid+1, k = fst;
+        while(i <= mid && j <= lst) {
+            aux[k++] = a[i]<= a[j] ? a[i++] : a[j++];
+        }
+        while(i <= mid) aux[k++] = a[i++];
+        while(j <= lst) aux[k++] = a[j++];
+    }
+
+    /**
+     * Not public method that implements the basic mergesort
+     * @param a array that we want to order
+     * @param first index of the element that represent the left extreme of the segment that we want to order
+     * @param last index of the element that represent the right extreme of the segment that we want to order
+     */
+    static void msortBasicIntern(int[] a, int first, int last){
+        if(first >= last) return;
+        int m = (first+last)>>>1;
+        msortBasicIntern(a, first, m);
+        msortBasicIntern(a, m+1,last);
+        mergeBasic(a, first, m, last);
+    }
+
+    /**
+     * Not public method that implements a version of the mergesort with an auxiliary array and an optimized mergesort
+     * @param a array that we want to order
+     * @param first index of the element that represent the left extreme of the segment that we want to order
+     * @param last index of the element that represent the right extreme of the segment that we want to order
+     * @param aux auxiliary array used to avoid to create a new one every time that we merge
+     */
+    static void msortNoGarbageIntern(int[] a, int first, int last, int[] aux){
+        if(first >= last) return;
+        int m = (first+last)>>>1;
+        msortNoGarbageIntern(a, first, m, aux);
+        msortNoGarbageIntern(a, m + 1, last, aux);
+        mergeNoGarbage(a, first, m, last, aux);
+    }
+
+    /**
+     * Not public method that implements an alternative version of the mergesort that use both the original
+     * and the auxiliary array
+     * @param a array that we want to order
+     * @param fst index of the element that represent the left extreme of the segment that we want to order
+     * @param lst index of the element that represent the right extreme of the segment that we want to order
+     * @param aux auxiliary array used to avoid to create a new one every time that we merge
+     */
+    static void msortAltIntern(int[] a, int fst, int lst, int[] aux){
+        if(fst < lst) {
+            int m = (fst + lst)/2;
+            msortAltIntern(aux, fst, m, a);
+            msortAltIntern(aux, m + 1, lst, a);
+            mergeAlt(aux, fst, m, lst, a);
+        }
     }
 
     /**
@@ -125,11 +256,11 @@ public class Sorting {
     }
 
     /**
-     * Basic version of the mergesort
+     * Method that implements the basic version of the mergesort
      * @param a array that have to be ordered
      */
     public static void msortBasic(int[] a){
-
+        msortBasicIntern(a, 0, a.length - 1);
     }
 
     /**
@@ -138,23 +269,20 @@ public class Sorting {
      * @param a array that have to be ordered
      */
     public static void msortNoGarbage(int[] a){
-
+        int n = a.length;
+        int[] aux = new int[n];
+        msortNoGarbageIntern(a, 0, n - 1, aux);
     }
 
     /**
-     * Alternative version of the mergesort
+     * Alternative version of the mergesort that use alternatively the original array
+     * and the auxiliary one.
      * @param a array that have to be ordered
      */
     public static void msortAlt(int[] a){
-
-    }
-
-    /**
-     * Version of the mergesort that use also the insertion sort in some cases
-     * @param a array that have to be ordered
-     */
-    public static void msortIsort(int[] a){
-
+        int n = a.length;
+        int[] aux = new int[n];
+        msortAltIntern(a, 0, n - 1, aux);
     }
 
     /**
@@ -162,7 +290,13 @@ public class Sorting {
      * @param a array that have to be ordered
      */
     public static void parallelMergesort(int[] a){
-
+        int n = a.length-1;
+        int cores = Runtime.getRuntime().availableProcessors();
+        ForkJoinPool pool = ForkJoinPool.commonPool();
+        int[] aux = new int[a.length];
+        ParallelMergeSorter sorter =
+                new ParallelMergeSorter(a, 0, n, aux, cores);
+        pool.invoke(sorter);
     }
 
     /**

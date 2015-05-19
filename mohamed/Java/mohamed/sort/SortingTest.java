@@ -176,4 +176,168 @@ public class SortingTest {
         assertTrue(Sorting.isSorted(randomArray));
     }
 
+    /**
+     * Test of the method that implements the basic version of the mergesort of the Sorting class
+     */
+    @Test
+    public void testMsortBasicArrayLengthZeroArray() {
+        Sorting.msortBasic(lengthZeroArray);
+        assertTrue(Sorting.isSorted(lengthZeroArray));
+    }
+
+    @Test
+    public void testMsortBasicLengthOneArray() {
+        Sorting.msortBasic(lengthZeroArray);
+        assertTrue(Sorting.isSorted(lengthOneArray));
+    }
+
+    @Test
+    public void testMsortBasicSortedArray() {
+        Sorting.msortBasic(sortedArray);
+        assertTrue(Sorting.isSorted(sortedArray));
+    }
+
+    @Test
+    public void testMsortBasicReverseSortedArray() {
+        Sorting.msortBasic(reverseSortedArray);
+        assertTrue(Sorting.isSorted(reverseSortedArray));
+
+    }
+
+    @Test
+    public void testMsortBasicUnsortedArray() {
+        Sorting.msortBasic(unsortedArray);
+        assertTrue(Sorting.isSorted(unsortedArray));
+
+    }
+
+    @Test
+    public void testMsortBasicRandomArray() {
+        Sorting.msortBasic(randomArray);
+        assertTrue(Sorting.isSorted(randomArray));
+    }
+
+    /**
+     * Test of the method that implements the "No Garbage" version of the mergesort of the Sorting class
+     */
+    @Test
+    public void testMsortNoGarbageArrayLengthZeroArray() {
+        Sorting.msortNoGarbage(lengthZeroArray);
+        assertTrue(Sorting.isSorted(lengthZeroArray));
+    }
+
+    @Test
+    public void testMsortNoGarbageLengthOneArray() {
+        Sorting.msortNoGarbage(lengthZeroArray);
+        assertTrue(Sorting.isSorted(lengthOneArray));
+    }
+
+    @Test
+    public void testMsortNoGarbageSortedArray() {
+        Sorting.msortNoGarbage(sortedArray);
+        assertTrue(Sorting.isSorted(sortedArray));
+    }
+
+    @Test
+    public void testMsortNoGarbageReverseSortedArray() {
+        Sorting.msortNoGarbage(reverseSortedArray);
+        assertTrue(Sorting.isSorted(reverseSortedArray));
+
+    }
+
+    @Test
+    public void testMsortNoGarbageUnsortedArray() {
+        Sorting.msortNoGarbage(unsortedArray);
+        assertTrue(Sorting.isSorted(unsortedArray));
+
+    }
+
+    @Test
+    public void testMsortNoGarbageRandomArray() {
+        Sorting.msortNoGarbage(randomArray);
+        assertTrue(Sorting.isSorted(randomArray));
+    }
+
+    /**
+     * Test of the method that implements an alternative version of the mergesort of the Sorting class
+     */
+    @Test
+    public void testMsortAltArrayLengthZeroArray() {
+        Sorting.msortAlt(lengthZeroArray);
+        assertTrue(Sorting.isSorted(lengthZeroArray));
+    }
+
+    @Test
+    public void testMsortAltLengthOneArray() {
+        Sorting.msortAlt(lengthZeroArray);
+        assertTrue(Sorting.isSorted(lengthOneArray));
+    }
+
+    @Test
+    public void testMsortAltSortedArray() {
+        Sorting.msortAlt(sortedArray);
+        assertTrue(Sorting.isSorted(sortedArray));
+    }
+
+    @Test
+    public void testMsortAltReverseSortedArray() {
+        Sorting.msortAlt(reverseSortedArray);
+        assertTrue(Sorting.isSorted(reverseSortedArray));
+
+    }
+
+    @Test
+    public void testMsortAltUnsortedArray() {
+        Sorting.msortAlt(unsortedArray);
+        assertTrue(Sorting.isSorted(unsortedArray));
+
+    }
+
+    @Test
+    public void testMsortAltRandomArray() {
+        Sorting.msortAlt(randomArray);
+        assertTrue(Sorting.isSorted(randomArray));
+    }
+
+    /**
+     * Test of the method that implements the parallel version of the mergesort of the Sorting class
+     */
+    @Test
+    public void testParallelMergesortArrayLengthZeroArray() {
+        Sorting.parallelMergesort(lengthZeroArray);
+        assertTrue(Sorting.isSorted(lengthZeroArray));
+    }
+
+    @Test
+    public void testParallelMergesortLengthOneArray() {
+        Sorting.parallelMergesort(lengthZeroArray);
+        assertTrue(Sorting.isSorted(lengthOneArray));
+    }
+
+    @Test
+    public void testParallelMergesortSortedArray() {
+        Sorting.parallelMergesort(sortedArray);
+        assertTrue(Sorting.isSorted(sortedArray));
+    }
+
+    @Test
+    public void testParallelMergesortReverseSortedArray() {
+        Sorting.parallelMergesort(reverseSortedArray);
+        assertTrue(Sorting.isSorted(reverseSortedArray));
+
+    }
+
+    @Test
+    public void testParallelMergesortUnsortedArray() {
+        Sorting.parallelMergesort(unsortedArray);
+        assertTrue(Sorting.isSorted(unsortedArray));
+
+    }
+
+    @Test
+    public void testParallelMergesortRandomArray() {
+        Sorting.parallelMergesort(randomArray);
+        assertTrue(Sorting.isSorted(randomArray));
+    }
+
 }
