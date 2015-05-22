@@ -6,4 +6,6 @@
         punti: 3
     - sort:
         punti: 10
-  somma-punti: 13
+    - priorityqueue:
+        punti: 6
+  somma-punti: 19
