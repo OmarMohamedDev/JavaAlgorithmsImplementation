@@ -48,7 +48,7 @@ public class PriorityQueueStringDoubleHeapTest {
         h.add(elem, prior);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testAddTwoElementsOneSpot() {
         PriorityQueueStringDoubleHeap h = new PriorityQueueStringDoubleHeap(1);
         String elem = "second";

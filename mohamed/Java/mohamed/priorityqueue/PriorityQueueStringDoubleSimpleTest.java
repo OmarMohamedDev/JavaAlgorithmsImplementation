@@ -48,7 +48,7 @@ public class PriorityQueueStringDoubleSimpleTest {
         h.add(elem, prior);
     }
     
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testAddTwoElementsOneSpot() {
         PriorityQueueStringDoubleSimple h = new PriorityQueueStringDoubleSimple(1);
         String elem = "second";
@@ -57,6 +57,7 @@ public class PriorityQueueStringDoubleSimpleTest {
         elem = "first";
         prior = 0.0;
         h.add(elem, prior);
+
     }
     
     @Test

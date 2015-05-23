@@ -60,13 +60,14 @@ public class PriorityQueueStringDoubleSimple implements PriorityQueueStringDoubl
     public boolean add(String element, double priority) {
         //The queue contains already the element
         if(position.containsKey(element)) return false;
-        if(elementsNumber < array.length){
-            array[elementsNumber] = new PriorityElem(element,priority);
-            position.put(element,elementsNumber++);
-            return true;
-        }
-        else
-            throw new IllegalArgumentException("The queue is full");
+
+        //If the queue is full, reallocate queue
+        if(elementsNumber == array.length) reallocate();
+
+        array[elementsNumber] = new PriorityElem(element,priority);
+        position.put(element,elementsNumber++);
+        return true;
+
     }
 
     /**
@@ -145,6 +146,20 @@ public class PriorityQueueStringDoubleSimple implements PriorityQueueStringDoubl
 
         array[position.get(element)].prior = priority;
         return true;
+    }
+
+    /**
+     * Method that reallocate an array in another one that will be the double of the original
+     */
+    private void reallocate(){
+        int dimension = array.length;
+
+        PriorityElem[] newHeap = new PriorityElem[dimension*2];
+
+        for(int i=0; i<dimension; i++)
+            newHeap[i] = array[i];
+
+        array = newHeap;
     }
 
     //Inner class that represent the element with a speficied priority

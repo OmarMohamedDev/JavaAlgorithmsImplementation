@@ -58,19 +58,17 @@ public class PriorityQueueStringDoubleHeap implements PriorityQueueStringDouble{
      * @return false if the element is already inside the queue, true otherwise
      */
     public boolean add(String element, double priority) {
-        //If the queue isn't full
-        if(elementsNumber < heap.length){
-            //the element isn't already there
-            if(position.get(element) == null) {
-                PriorityElem eP = new PriorityElem(element, priority);
-                heap[elementsNumber] = eP;
-                moveUp(elementsNumber++);
-                return true;
-            }
-            else return false;
-        }
-        else
-            throw new IllegalArgumentException("Full queue");
+
+        //the element is already there
+        if(position.get(element) != null) return false;
+        //If the queue is full, reallocate queue
+        if(elementsNumber == heap.length) reallocate();
+
+        PriorityElem eP = new PriorityElem(element, priority);
+        heap[elementsNumber] = eP;
+        moveUp(elementsNumber++);
+        return true;
+
     }
 
     /**
@@ -124,12 +122,19 @@ public class PriorityQueueStringDoubleHeap implements PriorityQueueStringDouble{
      */
     public boolean delete(String element) {
         if(position.get(element) != null){
-            heap[position.get(element)] = null;
+            int oldPosition = position.get(element);
+            heap[oldPosition] = null;
             position.remove(element);
             elementsNumber--;
 
-            if(!isEmpty())
-                moveDown(0); //Fixing the heap
+            if(!isEmpty()){
+                //Moving the last element in the deleted position and then move down it
+                heap[oldPosition] = heap[elementsNumber-1];
+                heap[elementsNumber] = null;
+
+                moveDown(oldPosition); //Fixing the heap
+            }
+
             return true;
         }
         else
@@ -152,6 +157,20 @@ public class PriorityQueueStringDoubleHeap implements PriorityQueueStringDouble{
         moveUp(index);
         moveDown(index);
         return true;
+    }
+
+    /**
+     * Method that reallocate an array in another one that will be the double of the original
+     */
+    private void reallocate(){
+        int dimension = heap.length;
+
+        PriorityElem[] newHeap = new PriorityElem[dimension*2];
+
+        for(int i=0; i<dimension; i++)
+            newHeap[i] = heap[i];
+
+        heap = newHeap;
     }
 
 
