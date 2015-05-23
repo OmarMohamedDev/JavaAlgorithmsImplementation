@@ -23,15 +23,9 @@ public class PriorityQueueStringDoubleSimpleTest {
     /**
      * Test of isEmpty method, of class PriorityQueueStringDoubleSimple.
      */
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testisEmptyNullParameters() {
-        try {
-            PriorityQueueStringDoubleSimple h = new PriorityQueueStringDoubleSimple(null, null);
-            assertTrue(false);
-        } catch (IllegalArgumentException e) {
-            assertTrue(true);
-        }
-    
+        PriorityQueueStringDoubleSimple h = new PriorityQueueStringDoubleSimple(null, null);
     }
     
     @Test
@@ -51,48 +45,30 @@ public class PriorityQueueStringDoubleSimpleTest {
         PriorityQueueStringDoubleSimple h = new PriorityQueueStringDoubleSimple(1);
         String elem = "first";
         double prior = 0.0;
-        try {
-            h.add(elem, prior);
-            assertTrue(true);
-        } catch (IllegalArgumentException e) {
-            assertTrue(false);
-        }
-    
+        h.add(elem, prior);
     }
     
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testAddTwoElementsOneSpot() {
         PriorityQueueStringDoubleSimple h = new PriorityQueueStringDoubleSimple(1);
         String elem = "second";
         double prior = 1.0;
-    
-        try {
-            h.add(elem, prior);
-            elem = "first";
-            prior = 0.0;
-            h.add(elem, prior);
-            assertTrue(false);
-        } catch (IllegalArgumentException e) {
-            assertTrue(true);
-        }
-    
+        h.add(elem, prior);
+        elem = "first";
+        prior = 0.0;
+        h.add(elem, prior);
     }
     
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testAddTwoElementsTwoSpots() {
         PriorityQueueStringDoubleSimple h = new PriorityQueueStringDoubleSimple(2);
         String elem = "second";
         double prior = 1.0;
-    
-        try {
-            h.add(elem, prior);
-            elem = "first";
-            prior = 0.0;
-            h.add(elem, prior);
-            assertEquals("first", h.first());
-        } catch (IllegalArgumentException e) {
-            assertTrue(false);
-        }
+        h.add(elem, prior);
+        elem = "first";
+        prior = 0.0;
+        h.add(elem, prior);
+        assertEquals("first", h.first());
     }
     
     /**
@@ -134,20 +110,14 @@ public class PriorityQueueStringDoubleSimpleTest {
         assertEquals("second", h.removeFirst());
     }
     
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testRemoveFirstTwoElementsThreeTimes() {
         String[] elem = {"second", "first"};
         double[] prior = {1.0, 0.0};
         PriorityQueueStringDoubleSimple h = new PriorityQueueStringDoubleSimple(elem, prior);
         assertEquals("first", h.removeFirst());
         assertEquals("second", h.removeFirst());
-        try {
-            h.removeFirst();
-            assertTrue(false);
-        } catch (IllegalArgumentException e) {
-            assertTrue(true);
-        }
-    
+        h.removeFirst();
     }
     
     @Test
@@ -189,16 +159,18 @@ public class PriorityQueueStringDoubleSimpleTest {
     /**
      * Test of delete method, of class PriorityQueueStringDoubleSimple.
      */
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testDeleteEmptyQueue() {
-
-
+        PriorityQueueStringDoubleSimple h = new PriorityQueueStringDoubleSimple(1);
+        h.delete("first");
     }
 
     @Test
     public void testDeleteNotEmptyQueue() {
-
-
+        String[] elem = {"second", "third", "first"};
+        double[] prior = {2, 3, 1};
+        PriorityQueueStringDoubleSimple h = new PriorityQueueStringDoubleSimple(elem, prior);
+        assertTrue(h.delete("third"));
     }
 
 } 

@@ -1,10 +1,53 @@
 package mohamed.priorityqueue;
 
+import java.util.HashMap;
+
 /**
  * Class that implements priority queue with heap
  * @author Omar Mohamed
  */
 public class PriorityQueueStringDoubleHeap implements PriorityQueueStringDouble{
+
+    private int elementsNumber = 0;
+    private PriorityElem[] heap;
+    private final HashMap<String, Integer> position = new HashMap<String, Integer>();
+
+    /**
+     * PRECONDITION: elem.length==prior.length.
+     * Create an heap of dimension elem.length containing the elements in elem with priority prior
+     *
+     * @param elem array of string containing the value of the elements
+     * @param prior array of double containing the value of the priority of the elements
+     */
+    public PriorityQueueStringDoubleHeap(String[] elem, double[] prior) {
+        if (elem != null && prior != null) {
+            int elemLength = elem.length;
+            int priorLength = prior.length;
+            if ((elemLength > 0) && (elemLength == priorLength)) {
+                elementsNumber = elemLength;
+                heap = new PriorityElem[elemLength];
+
+                for (int i = 0; i < elemLength; i++) {
+                    heap[i] = new PriorityElem(elem[i], prior[i]);
+                    position.put(elem[i], i);
+                }
+               // heapify(0); AGGIUNGERE METODI AUSILIARI!!!!
+            }
+        } else {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    /**
+     * Create an empty heap with length n
+     *
+     * @param n max dimension for the heap
+     */
+    public PriorityQueueStringDoubleHeap(int n) {
+        heap = new PriorityElem[n];
+        elementsNumber = 0;
+    }
+
     /**
      * Add the element with a specified priority in the queue
      *
@@ -40,7 +83,7 @@ public class PriorityQueueStringDoubleHeap implements PriorityQueueStringDouble{
      * @return true if the queue is empty, false otherwise
      */
     public boolean isEmpty() {
-        return false;
+        return elementsNumber == 0;
     }
 
     /**
@@ -63,5 +106,19 @@ public class PriorityQueueStringDoubleHeap implements PriorityQueueStringDouble{
      */
     public boolean setPriority(String element, double priority) {
         return false;
+    }
+
+
+
+    //Inner class that represent the element with a speficied priority
+    protected class PriorityElem {
+
+        String elem;
+        double prior;
+
+        PriorityElem(String el, double pr) {
+            elem = el;
+            prior = pr;
+        }
     }
 }
