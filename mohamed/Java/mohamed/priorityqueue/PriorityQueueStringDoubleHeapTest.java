@@ -59,7 +59,7 @@ public class PriorityQueueStringDoubleHeapTest {
         h.add(elem, prior);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testAddTwoElementsTwoSpots() {
         PriorityQueueStringDoubleHeap h = new PriorityQueueStringDoubleHeap(2);
         String elem = "second";
@@ -110,14 +110,14 @@ public class PriorityQueueStringDoubleHeapTest {
         assertEquals("second", h.removeFirst());
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testRemoveFirstTwoElementsThreeTimes() {
         String[] elem = {"second", "first"};
         double[] prior = {1.0, 0.0};
         PriorityQueueStringDoubleHeap h = new PriorityQueueStringDoubleHeap(elem, prior);
         assertEquals("first", h.removeFirst());
         assertEquals("second", h.removeFirst());
-        h.removeFirst();
+        assertNull(h.removeFirst());
     }
 
     @Test
@@ -159,10 +159,10 @@ public class PriorityQueueStringDoubleHeapTest {
     /**
      * Test of delete method, of class PriorityQueueStringDoubleHeap.
      */
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testDeleteEmptyQueue() {
         PriorityQueueStringDoubleSimple h = new PriorityQueueStringDoubleSimple(1);
-        h.delete("first");
+        assertFalse(h.delete("first"));
     }
 
     @Test

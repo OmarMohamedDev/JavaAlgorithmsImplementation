@@ -99,9 +99,7 @@ public class PriorityQueueStringDoubleSimple implements PriorityQueueStringDoubl
     public String removeFirst() {
         if(isEmpty()) return null;
 
-        String elementSearched;
-
-        elementSearched = first();
+        String elementSearched = first();
 
         delete(elementSearched);
 
