@@ -127,6 +127,9 @@ public class PriorityQueueStringDoubleHeap implements PriorityQueueStringDouble{
             heap[position.get(element)] = null;
             position.remove(element);
             elementsNumber--;
+
+            if(!isEmpty())
+                moveDown(0); //Fixing the heap
             return true;
         }
         else
