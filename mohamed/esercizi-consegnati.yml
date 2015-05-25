@@ -8,4 +8,7 @@
         punti: 10
     - priorityqueue:
         punti: 6
-  somma-punti: 19
+    - dictionary:
+        punti: 8
+        variante: AVLTree
+  somma-punti: 27
