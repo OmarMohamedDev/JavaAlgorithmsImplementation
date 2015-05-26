@@ -3,7 +3,7 @@ package mohamed.dictionary;
 /**
  * @author Omar Mohamed
  */
-public class AVLTree implements SortedDictionary<Integer,Integer> {
+public class SearchTree implements SortedDictionary<Integer,Integer> {
 
     /**
      * Root of the tree
@@ -13,7 +13,7 @@ public class AVLTree implements SortedDictionary<Integer,Integer> {
     /**
      * Public constructor that set the root to null
      */
-    public AVLTree(){
+    public SearchTree(){
         this.root = null;
     }
 
@@ -21,7 +21,7 @@ public class AVLTree implements SortedDictionary<Integer,Integer> {
      * Public constructor that permit to initialize the root of the tree
      * @param root
      */
-    public AVLTree(Node root){
+    public SearchTree(Node root){
         this.root = root;
     }
 
@@ -160,13 +160,11 @@ public class AVLTree implements SortedDictionary<Integer,Integer> {
         Node right;
         Integer value;
         Integer key;
-        int height;
 
         Node() {
             key = null;
             value = null;
             left = right = null;
-            int height = 0;
         }
 
         Node(Integer key, Integer value) {
@@ -180,14 +178,6 @@ public class AVLTree implements SortedDictionary<Integer,Integer> {
 
         Integer getValue(){
             return value;
-        }
-
-        /**
-         * Return the height of a node
-         * @return height of the node
-         */
-        int height(){
-            return height;
         }
 
         /**
