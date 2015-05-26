@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="975511d0-b835-48b8-8c18-e553d8eecd7b" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/AVLTree.java" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/SearchTree.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/AVLTreeTest.java" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/SearchTreeTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mohamed/esercizi-consegnati.yml" afterPath="$PROJECT_DIR$/mohamed/esercizi-consegnati.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/SearchTree.java" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/SearchTree.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/SearchTreeTest.java" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/SearchTreeTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/SortedDictionary.java" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/SortedDictionary.java" />
     </list>
     <ignored path="laboratoriodialgoritmi.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,23 +53,23 @@
       <file leaf-file-name="SearchTree.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/SearchTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.3481677" vertical-offset="1377" max-vertical-offset="3435">
-              <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+            <state vertical-scroll-proportion="2.7879581" vertical-offset="0" max-vertical-offset="3750">
+              <caret line="71" column="37" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
               <folding>
                 <element signature="e#288#289#0" expanded="true" />
                 <element signature="e#320#321#0" expanded="true" />
                 <element signature="e#463#464#0" expanded="true" />
                 <element signature="e#495#496#0" expanded="true" />
-                <element signature="e#1433#1434#0" expanded="true" />
-                <element signature="e#1468#1469#0" expanded="true" />
-                <element signature="e#1743#1744#0" expanded="true" />
-                <element signature="e#1802#1803#0" expanded="true" />
-                <element signature="e#2506#2507#0" expanded="true" />
-                <element signature="e#2546#2547#0" expanded="true" />
-                <element signature="e#4602#4603#0" expanded="true" />
-                <element signature="e#4636#4637#0" expanded="true" />
-                <element signature="e#4665#4666#0" expanded="true" />
-                <element signature="e#4701#4702#0" expanded="true" />
+                <element signature="e#2082#2083#0" expanded="true" />
+                <element signature="e#2117#2118#0" expanded="true" />
+                <element signature="e#2392#2393#0" expanded="true" />
+                <element signature="e#2451#2452#0" expanded="true" />
+                <element signature="e#3155#3156#0" expanded="true" />
+                <element signature="e#3195#3196#0" expanded="true" />
+                <element signature="e#5251#5252#0" expanded="true" />
+                <element signature="e#5285#5286#0" expanded="true" />
+                <element signature="e#5314#5315#0" expanded="true" />
+                <element signature="e#5350#5351#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -79,8 +78,8 @@
       <file leaf-file-name="SearchTreeTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/SearchTreeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.535714" vertical-offset="2243" max-vertical-offset="6825">
-              <caret line="158" column="11" selection-start-line="158" selection-start-column="10" selection-end-line="158" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1823" max-vertical-offset="8280">
+              <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -120,6 +119,7 @@
         <option value="$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/AVLTreeTest.java" />
         <option value="$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/AVLTree.java" />
         <option value="$PROJECT_DIR$/mohamed/esercizi-consegnati.yml" />
+        <option value="$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/SearchTreeTest.java" />
         <option value="$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/SearchTree.java" />
       </list>
     </option>
@@ -723,12 +723,12 @@
       <workItem from="1432365622118" duration="11111000" />
       <workItem from="1432452658901" duration="604000" />
       <workItem from="1432577776193" duration="3555000" />
-      <workItem from="1432639356272" duration="8802000" />
+      <workItem from="1432639356272" duration="10495000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99702000" />
+    <option name="totallyTimeSpent" value="101395000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="743" extended-state="6" />
@@ -745,7 +745,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3276923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3276923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21669106" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -782,7 +782,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="25" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/SearchTreeTest.java</url>
+          <line>67</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="26" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1140,8 +1148,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/SearchTreeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.535714" vertical-offset="2243" max-vertical-offset="6825">
-          <caret line="158" column="11" selection-start-line="158" selection-start-column="10" selection-end-line="158" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1823" max-vertical-offset="8280">
+          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1150,23 +1158,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/SearchTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.3481677" vertical-offset="1377" max-vertical-offset="3435">
-          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+        <state vertical-scroll-proportion="2.7879581" vertical-offset="0" max-vertical-offset="3750">
+          <caret line="71" column="37" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
           <folding>
             <element signature="e#288#289#0" expanded="true" />
             <element signature="e#320#321#0" expanded="true" />
             <element signature="e#463#464#0" expanded="true" />
             <element signature="e#495#496#0" expanded="true" />
-            <element signature="e#1433#1434#0" expanded="true" />
-            <element signature="e#1468#1469#0" expanded="true" />
-            <element signature="e#1743#1744#0" expanded="true" />
-            <element signature="e#1802#1803#0" expanded="true" />
-            <element signature="e#2506#2507#0" expanded="true" />
-            <element signature="e#2546#2547#0" expanded="true" />
-            <element signature="e#4602#4603#0" expanded="true" />
-            <element signature="e#4636#4637#0" expanded="true" />
-            <element signature="e#4665#4666#0" expanded="true" />
-            <element signature="e#4701#4702#0" expanded="true" />
+            <element signature="e#2082#2083#0" expanded="true" />
+            <element signature="e#2117#2118#0" expanded="true" />
+            <element signature="e#2392#2393#0" expanded="true" />
+            <element signature="e#2451#2452#0" expanded="true" />
+            <element signature="e#3155#3156#0" expanded="true" />
+            <element signature="e#3195#3196#0" expanded="true" />
+            <element signature="e#5251#5252#0" expanded="true" />
+            <element signature="e#5285#5286#0" expanded="true" />
+            <element signature="e#5314#5315#0" expanded="true" />
+            <element signature="e#5350#5351#0" expanded="true" />
           </folding>
         </state>
       </provider>

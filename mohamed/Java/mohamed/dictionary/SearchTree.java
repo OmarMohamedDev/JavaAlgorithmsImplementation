@@ -28,37 +28,51 @@ public class SearchTree implements SortedDictionary<Integer,Integer> {
     /**
      * Returns the minimun key in the sorted dictionary
      *
-     * @return the minimum key
+     * @return if the tree is empty, null. the minimum key otherwise
      */
     public Integer minKey() {
-        return null;
+        if(root == null) return null;
+        Node node = root;
+        while(node.left != null){
+            node = node.left;
+        }
+        return node.getKey();
     }
 
     /**
      * Returns the maximum key in the sorted dictionary
      *
-     * @return the maximum key
+     * @return if the tree is empty, null. the maximum key otherwise
      */
     public Integer maxKey() {
-        return null;
+        if(root == null) return null;
+        Node node = root;
+        while(node.right != null) node = node.right;
+        return node.getKey();
     }
 
     /**
      * Returns the element with minimun key in the sorted dictionary
      *
-     * @return the element associated with the minimum key
+     * @return if the tree is empty, null. the element with minimum key otherwise
      */
-    public Integer ElementOfMinKey() {
-        return null;
+    public Integer elementOfMinKey() {
+        if(root == null) return null;
+        Node node = root;
+        while(node.left != null) node = node.left;
+        return node.getValue();
     }
 
     /**
      * Returns the element with maximum key in the sorted dictionary
      *
-     * @return the element associated with the maxixum key
+     * @return if the tree is empty, null. the element with maximum key otherwise
      */
-    public Integer ElementOfMaxKey() {
-        return null;
+    public Integer elementOfMaxKey() {
+        if(root == null) return null;
+        Node node = root;
+        while(node.right != null) node = node.right;
+        return node.getValue();
     }
 
     /**
@@ -225,7 +239,6 @@ public class SearchTree implements SortedDictionary<Integer,Integer> {
                 return oldValue;
             }
         }
-
 
     }
 }

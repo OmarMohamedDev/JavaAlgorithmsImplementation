@@ -26,49 +26,146 @@ public class SearchTreeTest {
 
     }
 
-    /**
-    *
-    * Method: minKey()
-    *
-    */
     @Test
-    public void testMinKey() throws Exception {
-    //TODO: Test goes here...
+    public void testMinKeyNoNodes(){
+        assertNull(searchTree.minKey());
+
     }
 
-    /**
-    *
-    * Method: maxKey()
-    *
-    */
     @Test
-    public void testMaxKey() throws Exception {
-    //TODO: Test goes here...
+    public void testMinKeyOneNode(){
+        Integer key = 5;
+        Integer value = 1;
+        searchTree = new SearchTree();
+        searchTree.add(key, value);
+        assertEquals(key, searchTree.minKey());
     }
 
-    /**
-    *
-    * Method: ElementOfMinKey()
-    *
-    */
     @Test
-    public void testElementOfMinKey() throws Exception {
-    //TODO: Test goes here...
+    public void testMinKeyManyNodes(){
+        searchTree = new SearchTree();
+
+        Integer key = 3;
+        Integer value = 1;
+        searchTree.add(key, value);
+
+        key = 6;
+        value = 2;
+        searchTree.add(key, value);
+
+        key = 9;
+        value = 4;
+        searchTree.add(key, value);
+
+        Integer expectedResult = 3;
+        assertEquals(expectedResult, searchTree.minKey());
     }
 
-    /**
-    *
-    * Method: ElementOfMaxKey()
-    *
-    */
+
     @Test
-    public void testElementOfMaxKey() throws Exception {
-    //TODO: Test goes here...
+    public void testMaxKeyNoNodes(){
+        searchTree = new SearchTree();
+        assertNull(searchTree.maxKey());
     }
 
-    /**
-     * Test of remove method, of class SearchTree.
-     */
+    @Test
+    public void testMaxKeyOneNode(){
+        Integer key = 5;
+        Integer value = 1;
+        searchTree = new SearchTree();
+        searchTree.add(key, value);
+        assertEquals(key,searchTree.maxKey());
+    }
+
+    @Test
+    public void testMaxKeyManyNodes(){
+        searchTree = new SearchTree();
+
+        Integer key = 3;
+        Integer value = 1;
+        searchTree.add(key, value);
+
+        key = 6;
+        value = 2;
+        searchTree.add(key, value);
+
+        key = 9;
+        value = 4;
+        searchTree.add(key, value);
+
+        Integer expectedResult = 9;
+        assertEquals(expectedResult, searchTree.maxKey());
+    }
+
+    @Test
+    public void testElementOfMinKeyNoNodes(){
+        searchTree = new SearchTree();
+        assertNull(searchTree.elementOfMinKey());
+    }
+
+    @Test
+    public void testElementOfMinKeyOneNode(){
+        Integer key = 5;
+        Integer value = 1;
+        searchTree = new SearchTree();
+        searchTree.add(key, value);
+        assertEquals(value,searchTree.elementOfMinKey());
+    }
+
+    @Test
+    public void testElementOfMinKeyManyNodes(){
+        searchTree = new SearchTree();
+
+        Integer key = 3;
+        Integer value = 1;
+        searchTree.add(key, value);
+
+        key = 6;
+        value = 2;
+        searchTree.add(key, value);
+
+        key = 9;
+        value = 4;
+        searchTree.add(key, value);
+
+        Integer expectedResult = 1;
+        assertEquals(expectedResult, searchTree.elementOfMinKey());
+    }
+
+    @Test
+    public void testElementOfMaxKeyNoNodes(){
+        searchTree = new SearchTree();
+        assertNull(searchTree.elementOfMaxKey());
+    }
+
+    @Test
+    public void testElementOfMaxKeyOneNode(){
+        Integer key = 5;
+        Integer value = 1;
+        searchTree = new SearchTree();
+        searchTree.add(key, value);
+        assertEquals(value,searchTree.elementOfMaxKey());
+    }
+    @Test
+    public void testElementOfMaxKeyManyNodes(){
+        searchTree = new SearchTree();
+
+        Integer key = 3;
+        Integer value = 1;
+        searchTree.add(key, value);
+
+        key = 6;
+        value = 2;
+        searchTree.add(key, value);
+
+        key = 9;
+        value = 4;
+        searchTree.add(key, value);
+
+        Integer expectedResult = 4;
+        assertEquals(expectedResult, searchTree.elementOfMaxKey());
+    }
+
 
     @Test
     public void testRemoveNoNodes() {

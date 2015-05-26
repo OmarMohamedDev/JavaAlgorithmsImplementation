@@ -21,11 +21,11 @@ public interface SortedDictionary<K extends Comparable<? super K>, V> extends Di
      * Returns the element with minimun key in the sorted dictionary
      * @return the element associated with the minimum key
      */
-    V ElementOfMinKey();
+    V elementOfMinKey();
 
     /**
      * Returns the element with maximum key in the sorted dictionary
      * @return the element associated with the maxixum key
      */
-    V ElementOfMaxKey();
+    V elementOfMaxKey();
 }
