@@ -11,4 +11,6 @@
     - dictionary:
         punti: 4
         variante: SearchTree
-  somma-punti: 23
+    - unionfind:
+        punti: 6
+  somma-punti: 29
