@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="975511d0-b835-48b8-8c18-e553d8eecd7b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/graphs/graphs.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mohamed/Java/mohamed/unionfind/UnionFind.java" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/unionfind/UnionFind.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mohamed/Java/mohamed/unionfind/UnionFindTest.java" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/unionfind/UnionFindTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/graphs/BreadthFirstSearch.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/graphs/DepthFirstSearch.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/graphs/Graph.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/graphs/GraphSearch.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/graphs/SearchCallback.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/graphs/SparseGraph.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mohamed/esercizi-consegnati.yml" afterPath="$PROJECT_DIR$/mohamed/esercizi-consegnati.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -36,30 +39,94 @@
         <entry file="file://$PROJECT_DIR$/mohamed/esercizi-consegnati.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+              <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UnionFind.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/unionfind/UnionFind.java">
+      <file leaf-file-name="SparseGraph.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/graphs/SparseGraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1500">
-              <caret line="89" column="44" selection-start-line="89" selection-start-column="44" selection-end-line="89" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UnionFindTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/unionfind/UnionFindTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.4268293" vertical-offset="0" max-vertical-offset="1995">
-              <caret line="121" column="23" selection-start-line="121" selection-start-column="23" selection-end-line="121" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1874" max-vertical-offset="2760">
+              <caret line="92" column="13" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#307#318#0" expanded="true" />
+                <element signature="e#387#404#0" expanded="true" />
+                <element signature="e#473#490#0" expanded="true" />
+                <element signature="e#863#869#0" expanded="true" />
+                <element signature="e#4170#4178#0" expanded="true" />
+                <element signature="e#4746#4754#0" expanded="true" />
+                <element signature="e#5403#5404#0" expanded="true" />
+                <element signature="e#5440#5441#0" expanded="true" />
+                <element signature="e#5488#5489#0" expanded="true" />
+                <element signature="e#5532#5533#0" expanded="true" />
+                <element signature="e#5571#5572#0" expanded="true" />
+                <element signature="e#5610#5611#0" expanded="true" />
+                <element signature="e#5662#5663#0" expanded="true" />
+                <element signature="e#5710#5711#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SparseGraphTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/graphs/SparseGraphTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="7.390244" vertical-offset="0" max-vertical-offset="4020">
+              <caret line="202" column="27" selection-start-line="202" selection-start-column="27" selection-end-line="202" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#337#338#0" expanded="true" />
+                <element signature="e#381#382#0" expanded="true" />
+                <element signature="e#3602#3610#0" expanded="true" />
+                <element signature="e#3874#3882#0" expanded="true" />
+                <element signature="e#4248#4256#0" expanded="true" />
+                <element signature="e#4686#4694#0" expanded="true" />
+                <element signature="e#5966#5974#0" expanded="true" />
+                <element signature="e#6557#6565#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BreadthFirstSearch.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/graphs/BreadthFirstSearch.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+              <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DepthFirstSearch.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/graphs/DepthFirstSearch.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+              <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GraphSearch.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/graphs/GraphSearch.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+              <caret line="7" column="75" selection-start-line="7" selection-start-column="75" selection-end-line="7" selection-end-column="75" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchCallback.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/graphs/SearchCallback.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+              <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -97,9 +164,17 @@
         <option value="$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/AVLTree.java" />
         <option value="$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/SearchTreeTest.java" />
         <option value="$PROJECT_DIR$/mohamed/Java/mohamed/dictionary/SearchTree.java" />
-        <option value="$PROJECT_DIR$/mohamed/esercizi-consegnati.yml" />
         <option value="$PROJECT_DIR$/mohamed/Java/mohamed/unionfind/UnionFind.java" />
         <option value="$PROJECT_DIR$/mohamed/Java/mohamed/unionfind/UnionFindTest.java" />
+        <option value="$PROJECT_DIR$/mohamed/esercizi-consegnati.yml" />
+        <option value="$PROJECT_DIR$/mohamed/Java/mohamed/graphs/Graph.java" />
+        <option value="$PROJECT_DIR$/mohamed/Java/mohamed/graphs/GraphSearch.java" />
+        <option value="$PROJECT_DIR$/mohamed/Java/mohamed/graphs/SearchCallback.java" />
+        <option value="$PROJECT_DIR$/mohamed/Java/test/mohamed/graphs/SparseGraphTest.java" />
+        <option value="$PROJECT_DIR$/mohamed/Java/mohamed/graphs/BreadthFirstSearch.java" />
+        <option value="$PROJECT_DIR$/mohamed/Java/mohamed/graphs/DepthFirstSearch.java" />
+        <option value="$PROJECT_DIR$/mohamed/Java/mohamed/graphs/SparseGraph.java" />
+        <option value="$PROJECT_DIR$/mohamed/Java/mohamed/graphs/SparseGraphTest.java" />
       </list>
     </option>
   </component>
@@ -208,6 +283,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laboratoriodialgoritmi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laboratoriodialgoritmi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mohamed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mohamed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -251,7 +352,7 @@
       <recent name="mohamed.esercizio1" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.mohamed.unionfind in laboratoriodialgoritmi">
+  <component name="RunManager" selected="JUnit.mohamed.graphs in laboratoriodialgoritmi">
     <configuration default="false" name="mohamed.priorityqueue in laboratoriodialgoritmi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -283,62 +384,6 @@
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="mohamed.binarysearch in laboratoriodialgoritmi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="mohamed.binarysearch.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="laboratoriodialgoritmi" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="mohamed.binarysearch" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="mohamed.sort in laboratoriodialgoritmi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="mohamed.sort.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="laboratoriodialgoritmi" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="PACKAGE_NAME" value="mohamed.sort" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -401,6 +446,40 @@
       <envs />
       <patterns />
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="mohamed.graphs in laboratoriodialgoritmi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="mohamed.graphs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="laboratoriodialgoritmi" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="mohamed.graphs" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -660,20 +739,18 @@
       <envs />
       <method />
     </configuration>
-    <list size="5">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="JUnit.mohamed.priorityqueue in laboratoriodialgoritmi" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.mohamed.binarysearch in laboratoriodialgoritmi" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.mohamed.sort in laboratoriodialgoritmi" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.mohamed.dictionary in laboratoriodialgoritmi" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.mohamed.unionfind in laboratoriodialgoritmi" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.mohamed.dictionary in laboratoriodialgoritmi" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.mohamed.unionfind in laboratoriodialgoritmi" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.mohamed.graphs in laboratoriodialgoritmi" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.mohamed.unionfind in laboratoriodialgoritmi" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.mohamed.dictionary in laboratoriodialgoritmi" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.mohamed.priorityqueue in laboratoriodialgoritmi" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.mohamed.sort in laboratoriodialgoritmi" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.mohamed.binarysearch in laboratoriodialgoritmi" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.mohamed.graphs in laboratoriodialgoritmi" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.mohamed.unionfind in laboratoriodialgoritmi" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.mohamed.dictionary in laboratoriodialgoritmi" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.mohamed.priorityqueue in laboratoriodialgoritmi" />
       </list>
     </recent_temporary>
   </component>
@@ -713,16 +790,17 @@
       <workItem from="1432639356272" duration="10614000" />
       <workItem from="1432730076457" duration="1203000" />
       <workItem from="1432836582379" duration="5662000" />
-      <workItem from="1432979159509" duration="4176000" />
+      <workItem from="1432979159509" duration="4922000" />
+      <workItem from="1432992763631" duration="4775000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112555000" />
+    <option name="totallyTimeSpent" value="118076000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="743" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -735,10 +813,10 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3276923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3276923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21669106" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3272328" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -772,7 +850,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="26" />
+      <option name="time" value="45" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -781,55 +859,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/sort/SortingTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="195">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/sort/SortTiming.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="47" max-vertical-offset="1905">
-          <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/binarysearch/IntSortedArray.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="2820">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/sort/Sorting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2175">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/sort/SortingTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="195">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/sort/SortTiming.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="47" max-vertical-offset="1905">
-          <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/binarysearch/IntSortedArray.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="2820">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/sort/Sorting.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1552" max-vertical-offset="2175">
@@ -1096,14 +1125,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mohamed/esercizi-consegnati.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/sort/SortingTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="9.797561" vertical-offset="3408" max-vertical-offset="7635">
@@ -1116,9 +1137,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33246073" vertical-offset="158" max-vertical-offset="8280">
           <caret line="19" column="36" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1126,24 +1144,111 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33246073" vertical-offset="203" max-vertical-offset="2700">
           <caret line="25" column="52" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/unionfind/UnionFind.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1500">
+        <state vertical-scroll-proportion="3.182927" vertical-offset="0" max-vertical-offset="1500">
           <caret line="89" column="44" selection-start-line="89" selection-start-column="44" selection-end-line="89" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/graphs/SearchCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+          <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/graphs/GraphSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+          <caret line="7" column="75" selection-start-line="7" selection-start-column="75" selection-end-line="7" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/unionfind/UnionFindTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.4268293" vertical-offset="0" max-vertical-offset="1995">
-          <caret line="121" column="23" selection-start-line="121" selection-start-column="23" selection-end-line="121" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.04918033" vertical-offset="45" max-vertical-offset="1995">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/graphs/BreadthFirstSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/graphs/DepthFirstSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/graphs/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79614764" vertical-offset="419" max-vertical-offset="1050">
+          <caret line="61" column="43" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mohamed/esercizi-consegnati.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/graphs/SparseGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1105" max-vertical-offset="2760">
+          <caret line="92" column="13" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#307#318#0" expanded="true" />
+            <element signature="e#387#404#0" expanded="true" />
+            <element signature="e#473#490#0" expanded="true" />
+            <element signature="e#863#869#0" expanded="true" />
+            <element signature="e#4170#4178#0" expanded="true" />
+            <element signature="e#4746#4754#0" expanded="true" />
+            <element signature="e#5403#5404#0" expanded="true" />
+            <element signature="e#5440#5441#0" expanded="true" />
+            <element signature="e#5488#5489#0" expanded="true" />
+            <element signature="e#5532#5533#0" expanded="true" />
+            <element signature="e#5571#5572#0" expanded="true" />
+            <element signature="e#5610#5611#0" expanded="true" />
+            <element signature="e#5662#5663#0" expanded="true" />
+            <element signature="e#5710#5711#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/graphs/SparseGraphTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="7.390244" vertical-offset="0" max-vertical-offset="4020">
+          <caret line="202" column="27" selection-start-line="202" selection-start-column="27" selection-end-line="202" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#381#382#0" expanded="true" />
+            <element signature="e#3602#3610#0" expanded="true" />
+            <element signature="e#3874#3882#0" expanded="true" />
+            <element signature="e#4248#4256#0" expanded="true" />
+            <element signature="e#4686#4694#0" expanded="true" />
+            <element signature="e#5966#5974#0" expanded="true" />
+            <element signature="e#6557#6565#0" expanded="true" />
           </folding>
         </state>
       </provider>

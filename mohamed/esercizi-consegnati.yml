@@ -15,5 +15,5 @@
         punti: 6
     - graphs:
         punti: 6
-        variante:
+        variante: SparseGraph
   somma-punti: 35
