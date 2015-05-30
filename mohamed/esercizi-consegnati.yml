@@ -13,4 +13,7 @@
         variante: SearchTree
     - unionfind:
         punti: 6
-  somma-punti: 29
+    - graphs:
+        punti: 6
+        variante:
+  somma-punti: 35

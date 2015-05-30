@@ -39,7 +39,11 @@ public class UnionFind {
 
             for(int i=0;i<capacity;i++)
                 tempArray[i] = parentOrMinusSize[i];
+            //Initializing to -1 all the other new elements
+            for(int i = capacity; i<newN; i++)
+                tempArray[i] = -1;
 
+            capacity = newN;
             parentOrMinusSize = tempArray;
         }
     }
@@ -74,21 +78,19 @@ public class UnionFind {
         int root2 = find(b);
         if(root1 == root2) return false;
         if(parentOrMinusSize[root2] < parentOrMinusSize[root1]) {
-            for(int i =0; i<capacity;i++){
-                //Chaning the root of all the nodes
-                if(parentOrMinusSize[i]==parentOrMinusSize[root2])
-                    parentOrMinusSize[root2] = parentOrMinusSize[root1];
-            }
             //Chaning the size of the root
             parentOrMinusSize[root1] += parentOrMinusSize[root2];
+            //Making root1 the root of the other set
+            parentOrMinusSize[root2] = root1;
         }
         else {
-            for(int i =0; i<capacity;i++){
-                if(parentOrMinusSize[i]==parentOrMinusSize[root1])
-                    parentOrMinusSize[root1] = parentOrMinusSize[root2];
-            }
+            //Chaning the size of the root
             parentOrMinusSize[root2] += parentOrMinusSize[root1];
+            //Making root1 the root of the other set
+            parentOrMinusSize[root1] = root2;
+
         }
+
         return true;
     }
 
