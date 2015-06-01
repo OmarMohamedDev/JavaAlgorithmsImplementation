@@ -41,7 +41,7 @@ public class DepthFirstSearchTest {
         SearchCallbackImpl sci = new SearchCallbackImpl();
 
         DepthFirstSearch dfs = new DepthFirstSearch();
-        dfs.search((Graph)graph, null , sci);
+        dfs.search(graph, null , sci);
 
     }
 
@@ -55,7 +55,7 @@ public class DepthFirstSearchTest {
         SearchCallbackImpl sci = new SearchCallbackImpl();
 
         DepthFirstSearch dfs = new DepthFirstSearch();
-        dfs.search((Graph)graph, source , sci);
+        dfs.search(graph, source , sci);
         assertEquals("[A]", outBuffer.toString());
     }
 
@@ -70,7 +70,7 @@ public class DepthFirstSearchTest {
         SearchCallbackImpl sci = new SearchCallbackImpl();
 
         DepthFirstSearch dfs = new DepthFirstSearch();
-        dfs.search((Graph)graph, source , sci);
+        dfs.search(graph, source , sci);
         assertEquals("[A]", outBuffer.toString());
     }
 
@@ -85,7 +85,7 @@ public class DepthFirstSearchTest {
         SearchCallbackImpl sci = new SearchCallbackImpl();
 
         DepthFirstSearch dfs = new DepthFirstSearch();
-        dfs.search((Graph)graph, "A" , sci);
+        dfs.search(graph, "A" , sci);
         assertEquals("[A][B]", outBuffer.toString());
     }
 
@@ -100,7 +100,7 @@ public class DepthFirstSearchTest {
         SearchCallbackImpl sci = new SearchCallbackImpl();
 
         DepthFirstSearch dfs = new DepthFirstSearch();
-        dfs.search((Graph)graph, "A" , sci);
+        dfs.search(graph, "A" , sci);
         assertEquals("[A]", outBuffer.toString());
     }
 
@@ -123,7 +123,7 @@ public class DepthFirstSearchTest {
         SearchCallbackImpl sci = new SearchCallbackImpl();
 
         DepthFirstSearch dfs = new DepthFirstSearch();
-        dfs.search((Graph)graph, source , sci);
+        dfs.search(graph, source , sci);
         assertEquals("[A][B][E][C][D]", outBuffer.toString());
 
     }

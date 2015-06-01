@@ -47,7 +47,7 @@ public class BreadthFirstSearchTest {
         SearchCallbackImpl sci = new SearchCallbackImpl();
 
         BreadthFirstSearch bfs = new BreadthFirstSearch();
-        bfs.search((Graph)graph, null , sci);
+        bfs.search(graph, null , sci);
     }
 
     @Test
@@ -60,7 +60,7 @@ public class BreadthFirstSearchTest {
         SearchCallbackImpl sci = new SearchCallbackImpl();
 
         BreadthFirstSearch bfs = new BreadthFirstSearch();
-        bfs.search((Graph)graph, source , sci);
+        bfs.search(graph, source , sci);
         assertEquals("[A]", outBuffer.toString());
     }
 
@@ -75,7 +75,7 @@ public class BreadthFirstSearchTest {
         SearchCallbackImpl sci = new SearchCallbackImpl();
 
         BreadthFirstSearch bfs = new BreadthFirstSearch();
-        bfs.search((Graph)graph, source , sci);
+        bfs.search(graph, source , sci);
         assertEquals("[A][B]", outBuffer.toString());
     }
 
@@ -90,7 +90,7 @@ public class BreadthFirstSearchTest {
         SearchCallbackImpl sci = new SearchCallbackImpl();
 
         BreadthFirstSearch bfs = new BreadthFirstSearch();
-        bfs.search((Graph)graph, "A" , sci);
+        bfs.search(graph, "A" , sci);
         assertEquals("[A][B]", outBuffer.toString());
     }
 
@@ -102,7 +102,7 @@ public class BreadthFirstSearchTest {
         graph.addEdge("A", "A", 0.0);
         SearchCallbackImpl sci = new SearchCallbackImpl();
         BreadthFirstSearch bfs = new BreadthFirstSearch();
-        bfs.search((Graph)graph, "A" , sci);
+        bfs.search(graph, "A" , sci);
         assertEquals("[A]", outBuffer.toString());
     }
 
@@ -128,7 +128,7 @@ public class BreadthFirstSearchTest {
         SearchCallbackImpl sci = new SearchCallbackImpl();
 
         BreadthFirstSearch bfs = new BreadthFirstSearch();
-        bfs.search((Graph)graph, source , sci);
+        bfs.search(graph, source , sci);
         assertEquals("[A][B][C][D][E]", outBuffer.toString());
 
     }

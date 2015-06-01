@@ -16,4 +16,8 @@
     - graphs:
         punti: 6
         variante: SparseGraph
-  somma-punti: 35
+    - dijkstra:
+        punti: 4
+    - bellman-ford:
+        punti: 4
+  somma-punti: 43

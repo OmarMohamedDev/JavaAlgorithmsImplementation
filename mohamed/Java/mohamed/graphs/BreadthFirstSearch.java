@@ -58,7 +58,7 @@ public class BreadthFirstSearch implements GraphSearch<String,Double> {
         callback.onVisitingVertex(source);
         while(!q.isEmpty()){
             String node = (String)q.removeFirst();
-            hMVisited.put(node,true);//fine visita di node.
+            hMVisited.put(node,true);//end of the visit
             ArrayList<String> neighbors = (ArrayList<String>)graph.getNeighbours(node);
             if(neighbors!=null)
                 for (String neighbor : neighbors) {
