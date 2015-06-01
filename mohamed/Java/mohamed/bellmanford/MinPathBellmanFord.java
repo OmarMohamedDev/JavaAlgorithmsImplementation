@@ -16,4 +16,28 @@ public class MinPathBellmanFord <V, E extends DoubleSupplier>{
 
     }
 
+    /**
+     * Inner class used to represent a vertex and the data of a edge, if necessary
+     */
+    private class Node implements DoubleSupplier{
+        String vertex;
+        Double edgeData;
+
+        Node(String vertex, Double edgeData){
+            this.vertex = vertex;
+            this.edgeData = edgeData;
+        }
+
+        public String getVertex() {
+            return vertex;
+        }
+
+        /**
+         * @return the data assigned to the edge
+         */
+        public double getAsDouble() {
+            return edgeData;
+        }
+    }
+
 }
