@@ -1,110 +1,94 @@
 package mohamed.dijkstra;
 
 import mohamed.graphs.Graph;
-import mohamed.priorityqueue.PriorityQueueStringDoubleSimple;
 
 import java.util.*;
 import java.util.function.DoubleSupplier;
+import mohamed.dijkstra.MinPathDijkstra.Vertex;
+import mohamed.dijkstra.MinPathDijkstra.Edge;
 
 /**
+ *
  * @author Omar Mohamed
  */
 public class MinPathDijkstra <V, E extends DoubleSupplier>{
 
-    private HashMap hMIndex;
-    private HashMap hMVisited;
-    private HashMap hMFather;
-    private PriorityQueueStringDoubleSimple priorityQueue;
 
     /**
-     * Returns the list of vertices on the minimum path between a source
+     * Returns the list of vertices on the shortest path between a source
      * "source" and a destination "dest". The algorithm returns the empty
-     * list if a minimum path between "source" and "dest" doesn't exits
+     * list if the shortest path between "source" and "dest" doesn't exits
      * @param graph graph where we want to apply the dijkstra algorithm
      * @param source starting vertex of the path
      * @param dest ending vertex of the path
-     * @return the list of vertices of the minimum path if exists, null otherwise
+     * @return the list of vertices of the shortest path if exists, null otherwise
      */
     public List<V> minPath(Graph<V, E> graph, V source, V dest) {
+        if(graph == null || source == null || dest == null || !graph.hasVertex((V)((Vertex)source).name)|| !graph.hasVertex((V)((Vertex)dest).name)) return null;
 
-        //TO MODIFY
-        graph.hasVertex(source);
-        //Retrieving all the vertices values
-        String[] vertices = (String[]) graph.getVertices().toArray();
-        //Creating and initializing an array of double to the positive infinite
-        Double[] distances = new Double[vertices.length];
-        for(int i=0; i<distances.length;i++)
-            distances[i] = Double.POSITIVE_INFINITY;
+        ((Vertex)source).minDistance = 0.;
 
-        priorityQueue = new PriorityQueueStringDoubleSimple(vertices, distances);
-        ArrayList<String> ALVertices = (ArrayList<String>)graph.getVertices();
-        hMIndex = new HashMap();
-        hMVisited = new HashMap();
-        hMFather = new HashMap();
+        PriorityQueue<V> vertexQueue = new PriorityQueue<V>();
+        vertexQueue.add(source);
 
-        for (Iterator<String> it = ALVertices.iterator(); it.hasNext();) {
-            String temp = it.next();
-            hMIndex.put(temp, ALVertices.indexOf((String)temp));
-            hMVisited.put(temp, false);
-            hMFather.put(temp, null);
-        }
-        hMFather.put(source, source);
+        while (!vertexQueue.isEmpty()) {
+            Vertex u = (Vertex)vertexQueue.poll();
 
-        for(String vertex: ALVertices)
-            if(!(Boolean)hMVisited.get(vertex)) recursiveMinPath(graph, vertex, dest);
-        //
-
-    }
-
-    /**
-     * Auxiliary method, implement effectively the dijkstra algorithm
-     *
-     * @param graph graph where we want to apply the dijkstra algorithm
-     * @param source starting vertex of the path
-     * @param dest ending vertex of the path
-     */
-    private void recursiveMinPath(Graph<V, E> graph, V source, V dest){
-
-        priorityQueue.add(source);
-        hMVisited.put(source, true);
-        callback.onVisitingVertex(source);
-        while(!priorityQueue.isEmpty()){
-            String node = (String)priorityQueue.removeFirst();
-            hMVisited.put(node,true);//end of the visit
-            ArrayList<String> neighbors = (ArrayList<String>)graph.getNeighbours(node);
-            if(neighbors!=null)
-                for (String neighbor : neighbors) {
-                    if(!(Boolean)hMVisited.get(neighbor)){
-                        hMVisited.put(neighbor,true);
-                        hMFather.put(neighbor, node);
-                        callback.onVisitingVertex(neighbor);
-                        priorityQueue.add(neighbor);
-                    }
+            for (Edge e : u.adjacencies)
+            {
+                double weight = ((Edge)e).getAsDouble();
+                Vertex v = ((Edge)e).getTarget();
+                double distanceThroughU = u.minDistance + weight;
+                if (distanceThroughU < v.minDistance) {
+                    vertexQueue.remove(v);
+                    v.minDistance = distanceThroughU ;
+                    v.previous = u;
+                    vertexQueue.add((V)v);
                 }
+            }
+        }
+
+        List<V> path = new ArrayList<V>();
+        for (Vertex vertex = (Vertex)dest; vertex != null; vertex = vertex.previous)
+            path.add((V)vertex);
+        Collections.reverse(path);
+        return path;
+
+    }
+
+    /**
+     * Class that represent a vertex
+     */
+    static class Vertex implements Comparable<Vertex>
+    {
+        public final String name;
+        public Edge[] adjacencies;
+        public double minDistance = Double.POSITIVE_INFINITY;
+        public Vertex previous;
+        public Vertex(String argName) { name = argName; }
+        public String toString() { return name; }
+        public int compareTo(Vertex other)
+        {
+            return Double.compare(minDistance, other.minDistance);
         }
     }
 
     /**
-     * Inner class used to represent a vertex and the data of a edge, if necessary
+     * Class that represent an edge
      */
-    private class Node implements DoubleSupplier{
-        String vertex;
-        Double edgeData;
+    static class Edge implements DoubleSupplier
+    {
+        public final Vertex target;
+        public final double weight;
+        public Edge(Vertex argTarget, double argWeight)
+        { target = argTarget; weight = argWeight; }
 
-        Node(String vertex, Double edgeData){
-            this.vertex = vertex;
-            this.edgeData = edgeData;
-        }
-
-        public String getVertex() {
-            return vertex;
-        }
-
-        /**
-         * @return the data assigned to the edge
-         */
         public double getAsDouble() {
-            return edgeData;
+            return weight;
+        }
+
+        public Vertex getTarget(){
+            return target;
         }
     }
 }
