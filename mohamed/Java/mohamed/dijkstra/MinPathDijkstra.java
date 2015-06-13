@@ -24,15 +24,24 @@ public class MinPathDijkstra <V, E extends DoubleSupplier>{
      * @return the list of vertices of the shortest path if exists, null otherwise
      */
     public List<V> minPath(Graph<V, E> graph, V source, V dest) {
-        if(graph == null || source == null || dest == null || !graph.hasVertex((V)((Vertex)source).name)|| !graph.hasVertex((V)((Vertex)dest).name)) return null;
+        if(graph == null || source == null || dest == null || !graph.hasVertex(source)|| !graph.hasVertex(dest)) return null;
 
-        ((Vertex)source).minDistance = 0.;
+        //Shortest path list that we have to return
+        List<V> path = new ArrayList<V>();
+
+        ((Vertex)source).minDistance = 0.0;
 
         PriorityQueue<V> vertexQueue = new PriorityQueue<V>();
         vertexQueue.add(source);
 
         while (!vertexQueue.isEmpty()) {
             Vertex u = (Vertex)vertexQueue.poll();
+            //The vertex is black and the distance is definitive, adding the vertex in the final list that we have to return
+            path.add((V) u);
+
+            //Checking if u is the destination vertex. If it is, we just exit the loop and return the list
+            if(u.compareVertices((Vertex)dest))
+                break;
 
             for (Edge e : u.adjacencies)
             {
@@ -48,10 +57,6 @@ public class MinPathDijkstra <V, E extends DoubleSupplier>{
             }
         }
 
-        List<V> path = new ArrayList<V>();
-        for (Vertex vertex = (Vertex)dest; vertex != null; vertex = vertex.previous)
-            path.add((V)vertex);
-        Collections.reverse(path);
         return path;
 
     }

@@ -7,7 +7,8 @@ import mohamed.graphs.SparseGraph.Edge;
  */
 public class SearchCallbackImpl implements SearchCallback<Vertex, Edge> {
     public void onVisitingVertex(Vertex vertex) {
-        System.out.print("["+vertex.toString()+"]");
+        if(vertex!=null)
+             System.out.print("["+vertex.toString()+"]");
     }
 
     public void onTraversingEdge(Vertex source, Vertex dest, Edge info) {

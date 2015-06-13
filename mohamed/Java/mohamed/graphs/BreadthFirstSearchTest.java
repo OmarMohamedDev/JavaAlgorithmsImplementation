@@ -77,7 +77,7 @@ public class BreadthFirstSearchTest {
 
         BreadthFirstSearch bfs = new BreadthFirstSearch();
         bfs.search(graph, source , sci);
-        assertEquals("[A]", outBuffer.toString());
+        assertEquals("[A][B]", outBuffer.toString());
     }
 
     @Test
@@ -133,14 +133,14 @@ public class BreadthFirstSearchTest {
 
         graph.addEdge(vertex1, vertex2, new Edge(vertex2, 0.0));
         graph.addEdge(vertex1, vertex3, new Edge(vertex3, 0.0));
-        graph.addEdge(vertex1, vertex4, new Edge(vertex4, 0.0));
-        graph.addEdge(vertex2, vertex5, new Edge(vertex5, 0.0));
+        graph.addEdge(vertex2, vertex4, new Edge(vertex4, 0.0));
+        graph.addEdge(vertex1, vertex5, new Edge(vertex5, 0.0));
 
         SearchCallbackImpl sci = new SearchCallbackImpl();
 
         BreadthFirstSearch bfs = new BreadthFirstSearch();
         bfs.search(graph, vertex1 , sci);
-        assertEquals("[A][B][E][C][D]", outBuffer.toString());
+        assertEquals("[A][B][C][E][D]", outBuffer.toString());
 
     }
 } 

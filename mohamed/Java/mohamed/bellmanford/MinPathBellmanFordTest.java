@@ -1,5 +1,6 @@
 package mohamed.bellmanford;
 
+import mohamed.dijkstra.MinPathDijkstra;
 import mohamed.graphs.SparseGraph.Vertex;
 import mohamed.graphs.SparseGraph.Edge;
 import mohamed.graphs.SparseGraph;
@@ -111,7 +112,7 @@ public class MinPathBellmanFordTest {
 
 
     @Test
-    public void testMinPathFourEdges() {
+    public void testMinPathFiveVertexFourEdges() {
         SparseGraph graph = new SparseGraph();
         Vertex vertex1 =  new Vertex("A");
         Vertex vertex2 = new Vertex("B");
@@ -130,8 +131,6 @@ public class MinPathBellmanFordTest {
         graph.addEdge(vertex1, vertex4, new Edge(vertex2, 2.0));
         graph.addEdge(vertex2, vertex5, new Edge(vertex2, 0.5));
 
-
-
         MinPathBellmanFord minPathBellmanFord= new MinPathBellmanFord();
 
         List<Vertex> minPathList = new ArrayList<Vertex>();
@@ -140,6 +139,50 @@ public class MinPathBellmanFordTest {
         minPathList.add(vertex3);
 
         assertEquals(minPathBellmanFord.minPath(graph, vertex1, vertex2), minPathList);
+    }
+
+    @Test
+    public void testMinPathFiveVertexSixEdges() {
+        SparseGraph graph = new SparseGraph();
+        MinPathBellmanFord minPathBellmanFord= new MinPathBellmanFord();
+
+        Vertex vertex1 = new Vertex("A");
+        Vertex vertex2 = new Vertex("B");
+        Vertex vertex3 = new Vertex("C");
+        Vertex vertex4 = new Vertex("D");
+        Vertex vertex5 = new Vertex("E");
+
+        graph.addVertex(vertex1);
+        graph.addVertex(vertex2);
+        graph.addVertex(vertex3);
+        graph.addVertex(vertex4);
+        graph.addVertex(vertex5);
+
+        graph.addEdge(vertex1, vertex2, new Edge(vertex2, 5.0));
+        graph.addEdge(vertex2, vertex3, new Edge(vertex3, 1.5));
+        graph.addEdge(vertex1, vertex4, new Edge(vertex4, 2.0));
+        graph.addEdge(vertex4, vertex5, new Edge(vertex5, 1.0));
+        graph.addEdge(vertex2, vertex5, new Edge(vertex5, 0.5));
+        graph.addEdge(vertex5, vertex3, new Edge(vertex3, 0.8));
+
+
+        List<Vertex> minPathList = new ArrayList<Vertex>();
+        minPathList.add(vertex1);
+        minPathList.add(vertex4);
+        minPathList.add(vertex5);
+        minPathList.add(vertex3);
+
+        List<Vertex> listObtained = minPathBellmanFord.minPath(graph, vertex1, vertex3);
+
+        int counter = 0;
+
+        for (Vertex v1 : listObtained)
+            for(Vertex v2 : minPathList)
+                if(v1.compareVertices(v2))
+                    counter++;
+
+        assertEquals(counter, listObtained.size());
+
     }
 
 
