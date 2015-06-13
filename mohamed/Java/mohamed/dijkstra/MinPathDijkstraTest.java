@@ -1,7 +1,7 @@
 package mohamed.dijkstra;
 
-import mohamed.dijkstra.MinPathDijkstra.Vertex;
-import mohamed.dijkstra.MinPathDijkstra.Edge;
+import mohamed.graphs.SparseGraph.Vertex;
+import mohamed.graphs.SparseGraph.Edge;
 import mohamed.graphs.SparseGraph;
 import org.junit.Test;
 import org.junit.Before; 
@@ -21,18 +21,6 @@ import static org.junit.Assert.assertNull;
 * @author Omar Mohamed
 */ 
 public class MinPathDijkstraTest {
-    private final ByteArrayOutputStream outBuffer = new ByteArrayOutputStream();
-
-    @Before
-    public void setupOutputStreams() {
-        System.setOut(new PrintStream(outBuffer));
-    }
-
-    @After
-    public void cleanUpOtputStreams() {
-        System.setOut(null);
-    }
-
 
     /**
      * Test for minPath method
@@ -50,60 +38,52 @@ public class MinPathDijkstraTest {
     public void testMinPathOneVertexNoEdges() {
         SparseGraph graph = new SparseGraph();
 
-        String source = "A";
+        Vertex source = new Vertex("A");
         graph.addVertex(source);
 
         MinPathDijkstra minPathDijkstra = new MinPathDijkstra();
 
-        assertNull(minPathDijkstra.minPath(graph, new Vertex(source), null));
+        assertNull(minPathDijkstra.minPath(graph, source, null));
     }
 
     @Test
     public void testMinPathTwoVertecesNoEdges() {
         SparseGraph graph = new SparseGraph();
-        String source = "A";
+        Vertex source = new Vertex("A");
+        Vertex dest = new Vertex("B");
 
         graph.addVertex(source);
-        graph.addVertex("B");
+        graph.addVertex(dest);
 
         MinPathDijkstra minPathDijkstra = new MinPathDijkstra();
 
-        assertNull(minPathDijkstra.minPath(graph, new Vertex(source), null));
+        assertNull(minPathDijkstra.minPath(graph, source, null));
     }
 
     @Test
     public void testMinPathTwoVertecesOneEdge() {
         SparseGraph graph = new SparseGraph();
-        String source = "A";
-        String dest = "B";
-        double data = 0.5;
+        Vertex source = new Vertex("A");
+        Vertex dest = new Vertex("B");
 
         graph.addVertex(source);
         graph.addVertex(dest);
 
-        graph.addEdge(source, dest, 0.5);
+        graph.addEdge(source, dest, new Edge(dest, 0.5));
 
         MinPathDijkstra minPathDijkstra = new MinPathDijkstra();
         List<Vertex> minPathList = new ArrayList<Vertex>();
-        minPathList.add(new Vertex(source));
-        minPathList.add(new Vertex(dest));
+        minPathList.add(source);
+        minPathList.add(dest);
 
-        Vertex vertex1 = new Vertex(source);
-        Vertex vertex2 = new Vertex(dest);
-        vertex1.adjacencies = new Edge[1];
-        vertex1.adjacencies[0] = new Edge(vertex2, data);
-        vertex2.adjacencies = new Edge[1];
-        vertex2.adjacencies[0] = new Edge(vertex1, data);
+        List<Vertex> listObtained = minPathDijkstra.minPath(graph, source, dest);
 
-        List<Vertex> listObtained = minPathDijkstra.minPath(graph, vertex1, vertex2);
-        boolean result = false;
         int counter = 0;
 
         for (Vertex v1 : listObtained)
             for(Vertex v2 : minPathList)
-                if(v1.name.equals(v2.name))
+                if(v1.compareVertices(v2))
                     counter++;
-
 
         assertEquals(counter, listObtained.size());
     }
@@ -112,20 +92,24 @@ public class MinPathDijkstraTest {
     @Test
     public void testMinPathOneVertexOneEdge() {
         SparseGraph graph = new SparseGraph();
-        String source = "A";
-        double data = 0.0;
+        Vertex source = new Vertex("A");
         graph.addVertex(source);
-        graph.addEdge(source, source, data);
+        graph.addEdge(source, source, new Edge(source, 0.0));
         MinPathDijkstra minPathDijkstra = new MinPathDijkstra();
 
         List<Vertex> minPathList = new ArrayList<Vertex>();
-        minPathList.add(new Vertex(source));
+        minPathList.add(source);
 
-        Vertex vertex1 = new Vertex(source);
-        vertex1.adjacencies = new Edge[1];
-        vertex1.adjacencies[0] = new Edge(vertex1, data);
+        List<Vertex> listObtained = minPathDijkstra.minPath(graph, source, source);
 
-        assertNull(minPathDijkstra.minPath(graph, vertex1, null));
+        int counter = 0;
+
+        for (Vertex v1 : listObtained)
+            for(Vertex v2 : minPathList)
+                if(v1.compareVertices(v2))
+                    counter++;
+
+        assertEquals(counter, listObtained.size());
     }
 
 

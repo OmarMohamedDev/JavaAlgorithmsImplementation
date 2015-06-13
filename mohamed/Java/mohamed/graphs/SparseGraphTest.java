@@ -1,6 +1,8 @@
 package mohamed.graphs;
 
 import mohamed.graphs.SparseGraph;
+import mohamed.graphs.SparseGraph.Vertex;
+import mohamed.graphs.SparseGraph.Edge;
 import org.junit.*;
 
 import java.util.ArrayList;
@@ -34,7 +36,7 @@ public class SparseGraphTest {
      */
     @Test
     public void testAddVertex() {
-        String vertex = "A";
+        Vertex vertex = new Vertex("A");
         boolean expResult = true;
         boolean result = instance.addVertex(vertex);
         assertEquals(expResult, result);
@@ -42,7 +44,7 @@ public class SparseGraphTest {
 
     @Test
     public void testAddVertexAddTwice() {
-        String vertex = "A";
+        Vertex vertex = new Vertex("A");
         boolean expResult = false;
         instance.addVertex(vertex);
         boolean result = instance.addVertex(vertex);
@@ -55,13 +57,13 @@ public class SparseGraphTest {
      */
     @Test
     public void testAddEdge() {
-        instance.addVertex("A");
-        instance.addVertex("B");
-        String vertex1 = "A";
-        String vertex2 = "B";
-        boolean expResult = true;
-        boolean result=instance.addEdge(vertex1, vertex2, 0.0);
-        assertEquals(expResult, result);
+        Vertex vertex1 =  new Vertex("A");
+        Vertex vertex2 = new Vertex("B");
+
+        instance.addVertex(vertex1);
+        instance.addVertex(vertex2);
+
+        assertTrue(instance.addEdge(vertex1, vertex2, new Edge(vertex2, 0.0)));
     }
 
     /**
@@ -69,7 +71,7 @@ public class SparseGraphTest {
      */
     @Test
     public void testHasVertexHasNoVertex() {
-        String vertex = "A";
+        Vertex vertex = new Vertex("A");
         boolean expResult = false;
         boolean result = instance.hasVertex(vertex);
         assertEquals(expResult, result);
@@ -77,9 +79,9 @@ public class SparseGraphTest {
 
     @Test
     public void testHasVertexHasAddedVertex() {
-        String vertex = "A";
+        Vertex vertex = new Vertex("A");
         boolean expResult = true;
-        instance.addVertex("A");
+        instance.addVertex( new Vertex("A"));
         boolean result = instance.hasVertex(vertex);
         assertEquals(expResult, result);
     }
@@ -91,8 +93,8 @@ public class SparseGraphTest {
     @Test
     public void testHasEdgeNoVertexes() {
 
-        String vertex1 = "A";
-        String vertex2 = "B";
+        Vertex vertex1 = new Vertex("A");
+        Vertex vertex2 = new Vertex("B");
 
         boolean result = instance.hasEdge(vertex1, vertex2);
         assertFalse(result);
@@ -101,10 +103,10 @@ public class SparseGraphTest {
 
     @Test
     public void testHasEdgeExistingVertexesNoEdges() {
-        instance.addVertex("A");
-        instance.addVertex("B");
-        String vertex1 = "A";
-        String vertex2 = "B";
+        Vertex vertex1 = new Vertex("A");
+        Vertex vertex2 = new Vertex("B");
+        instance.addVertex(vertex1);
+        instance.addVertex(vertex2);
 
         boolean expResult = false;
         boolean result = instance.hasEdge(vertex1, vertex2);
@@ -113,13 +115,13 @@ public class SparseGraphTest {
 
     @Test
     public void testHasEdgeExistingEdge() {
-        String vertex1 = "A";
-        String vertex2 = "B";
+        Vertex vertex1 = new Vertex("A");
+        Vertex vertex2 = new Vertex("B");
         instance.addVertex(vertex1);
         instance.addVertex(vertex2);
 
         boolean expResult=true;
-        instance.addEdge(vertex1,vertex2, 0.0);
+        instance.addEdge(vertex1,vertex2, new Edge(vertex2, 0.0));
 
         boolean result = instance.hasEdge(vertex1,vertex2);
         assertEquals(expResult, result);
@@ -129,14 +131,14 @@ public class SparseGraphTest {
 
     @Test
     public void testHasEdgeExistingEdgeBothDirection() {
-        String vertex1 = "A";
-        String vertex2 = "B";
+        Vertex vertex1 = new Vertex("A");
+        Vertex vertex2 = new Vertex("B");
         instance.addVertex(vertex1);
         instance.addVertex(vertex2);
 
         boolean expResult=true;
-        instance.addEdge(vertex1,vertex2, 0.0);
-        instance.addEdge(vertex2,vertex1, 0.0);
+        instance.addEdge(vertex1,vertex2,new Edge(vertex1, 0.0));
+        instance.addEdge(vertex2,vertex1, new Edge(vertex2, 0.0));
 
         boolean result = instance.hasEdge(vertex1,vertex2);
         assertEquals(expResult, result);
@@ -151,45 +153,45 @@ public class SparseGraphTest {
      */
     @Test
     public void testVerticesNoVertexes() {
-        ArrayList<String> expResult = new ArrayList<String>(0);
-        ArrayList<String> result = (ArrayList<String>)instance.getVertices();
+        ArrayList<Vertex> expResult = new ArrayList<Vertex>(0);
+        ArrayList<Vertex> result = (ArrayList<Vertex>)instance.getVertices();
         assertEquals(expResult, result);
     }
 
     @Test
     public void testVerticesOneVertex() {
-        String vertex1 = "A";
-        ArrayList<String> expResult = new ArrayList<String>(0);
+        Vertex vertex1 =  new Vertex("A");
+        ArrayList<Vertex> expResult = new ArrayList<Vertex>(0);
         expResult.add(vertex1);
         instance.addVertex(vertex1);
-        ArrayList<String> result = (ArrayList<String>)instance.getVertices();
+        ArrayList<Vertex> result = (ArrayList<Vertex>)instance.getVertices();
         assertEquals(expResult, result);
     }
 
     @Test
     public void testVerticesMoreVertexes() {
-        String vertex1 = "A";
-        String vertex2 = "B";
-        ArrayList<String> expResult = new ArrayList<String>(0);
+        Vertex vertex1 =  new Vertex("A");
+        Vertex vertex2 = new Vertex("B");
+        ArrayList<Vertex> expResult = new ArrayList<Vertex>(0);
         expResult.add(vertex1);
         expResult.add(vertex2);
         instance.addVertex(vertex1);
         instance.addVertex(vertex2);
-        ArrayList<String> result = (ArrayList<String>)instance.getVertices();
+        ArrayList<Vertex> result = (ArrayList<Vertex>)instance.getVertices();
         assertEquals(expResult, result);
     }
 
     @Test
     public void testVerticesOneEdge() {
-        String vertex1 = "A";
-        String vertex2 = "B";
-        ArrayList<String> expResult = new ArrayList<String>(0);
+        Vertex vertex1 =  new Vertex("A");
+        Vertex vertex2 = new Vertex("B");
+        ArrayList<Vertex> expResult = new ArrayList<Vertex>(0);
         expResult.add(vertex1);
         expResult.add(vertex2);
         instance.addVertex(vertex1);
         instance.addVertex(vertex2);
-        instance.addEdge(vertex1,vertex2, 0.0);
-        ArrayList<String> result = (ArrayList<String>)instance.getVertices();
+        instance.addEdge(vertex1,vertex2, new Edge(vertex2, 0.0));
+        ArrayList<Vertex> result = (ArrayList<Vertex>)instance.getVertices();
         assertEquals(expResult, result);
     }
 
@@ -199,47 +201,47 @@ public class SparseGraphTest {
 
     @Test
     public void testNeighborsNoVertexes() {
-        ArrayList<String> result = (ArrayList<String>)instance.getNeighbours("A");
+        ArrayList<Vertex> result = (ArrayList<Vertex>)instance.getNeighbours( new Vertex("A"));
         assertNull(result);
     }
 
     @Test
     public void testNeighborsNoNeighbors() {
-        String vertex1 = "A";
-        String vertex2 = "B";
+        Vertex vertex1 =  new Vertex("A");
+        Vertex vertex2 = new Vertex("B");
 
         instance.addVertex(vertex1);
         instance.addVertex(vertex2);
 
-        ArrayList<String> expResult = null;
-        ArrayList<String> result =(ArrayList<String>)instance.getNeighbours(vertex1);
+        ArrayList<Vertex> expResult = null;
+        ArrayList<Vertex> result =(ArrayList<Vertex>)instance.getNeighbours(vertex1);
         assertEquals(expResult, result);
 
     }
 
     @Test
     public void testNeighborsANeighbor() {
-        String vertex1 = "A";
-        String vertex2 = "B";
+        Vertex vertex1 =  new Vertex("A");
+        Vertex vertex2 = new Vertex("B");
 
         instance.addVertex(vertex1);
         instance.addVertex(vertex2);
 
-        instance.addEdge(vertex1,vertex2, 0.0);
-        instance.addEdge(vertex2,vertex1, 0.0);
+        instance.addEdge(vertex1,vertex2, new Edge(vertex2, 0.0));
+        instance.addEdge(vertex2,vertex1, new Edge(vertex1, 0.0));
 
-        ArrayList<String> expResult = new ArrayList<String>(0);
+        ArrayList<Vertex> expResult = new ArrayList<Vertex>(0);
         expResult.add(vertex2);
-        ArrayList<String> result =(ArrayList<String>)instance.getNeighbours(vertex1);
+        ArrayList<Vertex> result =(ArrayList<Vertex>)instance.getNeighbours(vertex1);
         assertEquals(expResult, result);
 
     }
 
     @Test
     public void testNeighborsMoreNeighbores() {
-        String vertex1 = "A";
-        String vertex2 = "B";
-        String vertex3 = "C";
+        Vertex vertex1 =  new Vertex("A");
+        Vertex vertex2 = new Vertex("B");
+        Vertex vertex3 = new Vertex("C");
 
 
         instance.addVertex(vertex1);
@@ -247,13 +249,13 @@ public class SparseGraphTest {
         instance.addVertex(vertex3);
 
 
-        instance.addEdge(vertex1,vertex2, 0.0);
-        instance.addEdge(vertex1,vertex3, 0.0);
+        instance.addEdge(vertex1,vertex2, new Edge(vertex2, 0.0));
+        instance.addEdge(vertex1,vertex3, new Edge(vertex3, 0.0));
 
-        ArrayList<String> expResult = new ArrayList<String>(0);
+        ArrayList<Vertex> expResult = new ArrayList<Vertex>(0);
         expResult.add(vertex2);
         expResult.add(vertex3);
-        ArrayList<String> result = (ArrayList<String>)instance.getNeighbours(vertex1);
+        ArrayList<Vertex> result = (ArrayList<Vertex>)instance.getNeighbours(vertex1);
         assertEquals(expResult, result);
 
     }

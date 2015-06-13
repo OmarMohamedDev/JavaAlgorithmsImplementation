@@ -1,6 +1,8 @@
 package mohamed.graphs;
 
 import mohamed.graphs.*;
+import mohamed.graphs.SparseGraph.Vertex;
+import mohamed.graphs.SparseGraph.Edge;
 import org.junit.Test;
 import org.junit.Before; 
 import org.junit.After;
@@ -48,9 +50,9 @@ public class DepthFirstSearchTest {
     @Test
     public void testSearchOneVertexNoEdges() {
         SparseGraph graph = new SparseGraph();
-        graph.addVertex("A");
+        Vertex source = new Vertex("A");
 
-        String source = "A";
+        graph.addVertex(source);
 
         SearchCallbackImpl sci = new SearchCallbackImpl();
 
@@ -62,10 +64,12 @@ public class DepthFirstSearchTest {
     @Test
     public void testSearchTwoVertecesNoEdges() {
         SparseGraph graph = new SparseGraph();
-        graph.addVertex("A");
-        graph.addVertex("B");
 
-        String source = "A";
+        Vertex source = new Vertex("A");
+
+        graph.addVertex(source);
+        graph.addVertex(new Vertex("B"));
+
 
         SearchCallbackImpl sci = new SearchCallbackImpl();
 
@@ -77,15 +81,18 @@ public class DepthFirstSearchTest {
     @Test
     public void testSearchTwoVertecesOneEdge() {
         SparseGraph graph = new SparseGraph();
-        graph.addVertex("A");
-        graph.addVertex("B");
+        Vertex source = new Vertex("A");
+        Vertex dest = new Vertex("B");
 
-        graph.addEdge("A", "B", 0.0);
+        graph.addVertex(source);
+        graph.addVertex(dest);
+
+        graph.addEdge(source,dest, new Edge(dest, 0.0));
 
         SearchCallbackImpl sci = new SearchCallbackImpl();
 
         DepthFirstSearch dfs = new DepthFirstSearch();
-        dfs.search(graph, "A" , sci);
+        dfs.search(graph, source , sci);
         assertEquals("[A][B]", outBuffer.toString());
     }
 
@@ -93,37 +100,44 @@ public class DepthFirstSearchTest {
     @Test
     public void testSearchOneVertexOneEdge() {
         SparseGraph graph = new SparseGraph();
-        graph.addVertex("A");
 
-        graph.addEdge("A", "A", 0.0);
+        Vertex vertex = new Vertex("A");
+        graph.addVertex(vertex);
+
+        graph.addEdge(vertex,vertex, new Edge(vertex, 0.0));
 
         SearchCallbackImpl sci = new SearchCallbackImpl();
 
         DepthFirstSearch dfs = new DepthFirstSearch();
-        dfs.search(graph, "A" , sci);
+        dfs.search(graph, vertex , sci);
         assertEquals("[A]", outBuffer.toString());
     }
 
     @Test
     public void testSearchFourEdges() {
         SparseGraph graph = new SparseGraph();
-        graph.addVertex("A");
-        graph.addVertex("B");
-        graph.addVertex("C");
-        graph.addVertex("D");
-        graph.addVertex("E");
 
-        graph.addEdge("A", "B", 0.0);
-        graph.addEdge("A", "C", 0.0);
-        graph.addEdge("A", "D", 0.0);
-        graph.addEdge("B", "E", 0.0);
+        Vertex vertex1 = new Vertex("A");
+        Vertex vertex2 = new Vertex("B");
+        Vertex vertex3 = new Vertex("C");
+        Vertex vertex4 = new Vertex("D");
+        Vertex vertex5 = new Vertex("E");
 
-        String source = "A";
+        graph.addVertex(vertex1);
+        graph.addVertex(vertex2);
+        graph.addVertex(vertex3);
+        graph.addVertex(vertex4);
+        graph.addVertex(vertex5);
+
+        graph.addEdge(vertex1, vertex2, new Edge(vertex2, 0.0));
+        graph.addEdge(vertex1, vertex3, new Edge(vertex3, 0.0));
+        graph.addEdge(vertex1, vertex4, new Edge(vertex4, 0.0));
+        graph.addEdge(vertex2, vertex5, new Edge(vertex5, 0.0));
 
         SearchCallbackImpl sci = new SearchCallbackImpl();
 
         DepthFirstSearch dfs = new DepthFirstSearch();
-        dfs.search(graph, source , sci);
+        dfs.search(graph, vertex1 , sci);
         assertEquals("[A][B][E][C][D]", outBuffer.toString());
 
     }

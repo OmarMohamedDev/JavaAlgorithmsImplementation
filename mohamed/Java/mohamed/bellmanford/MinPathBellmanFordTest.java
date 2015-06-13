@@ -1,7 +1,7 @@
 package mohamed.bellmanford;
 
-import mohamed.bellmanford.MinPathBellmanFord.Vertex;
-import mohamed.bellmanford.MinPathBellmanFord.Edge;
+import mohamed.graphs.SparseGraph.Vertex;
+import mohamed.graphs.SparseGraph.Edge;
 import mohamed.graphs.SparseGraph;
 import org.junit.Test;
 import org.junit.Before; 
@@ -21,27 +21,11 @@ import static org.junit.Assert.assertNull;
 * @author Omar Mohamed
 */ 
 public class MinPathBellmanFordTest {
-    private final ByteArrayOutputStream outBuffer = new ByteArrayOutputStream();
-
-    @Before
-    public void setupOutputStreams() {
-        System.setOut(new PrintStream(outBuffer));
-    }
-
-    @After
-    public void cleanUpOtputStreams() {
-        System.setOut(null);
-    }
-
-
-    /**
-     * Tests for minPath method
-     */
     @Test
     public void tesMinPathNoVertex() {
         SparseGraph graph = new SparseGraph();
 
-        MinPathBellmanFord minPathBellmanFord= new MinPathBellmanFord();
+        MinPathBellmanFord minPathBellmanFord = new MinPathBellmanFord();
 
         minPathBellmanFord.minPath(graph, new Vertex(""), new Vertex(""));
     }
@@ -50,59 +34,78 @@ public class MinPathBellmanFordTest {
     public void testMinPathOneVertexNoEdges() {
         SparseGraph graph = new SparseGraph();
 
-        String source = "A";
+        Vertex source = new Vertex("A");
         graph.addVertex(source);
 
-        MinPathBellmanFord minPathBellmanFord= new MinPathBellmanFord();
+        MinPathBellmanFord minPathBellmanFord = new MinPathBellmanFord();
 
-        assertNull(minPathBellmanFord.minPath(graph, new Vertex(source), null));
+        assertNull(minPathBellmanFord.minPath(graph, source, null));
     }
 
     @Test
     public void testMinPathTwoVertecesNoEdges() {
         SparseGraph graph = new SparseGraph();
-        String source = "A";
+        Vertex source = new Vertex("A");
+        Vertex dest = new Vertex("B");
 
         graph.addVertex(source);
-        graph.addVertex("B");
+        graph.addVertex(dest);
 
-        MinPathBellmanFord minPathBellmanFord= new MinPathBellmanFord();
+        MinPathBellmanFord minPathBellmanFord = new MinPathBellmanFord();
 
-        assertNull(minPathBellmanFord.minPath(graph, new Vertex(source), null));
+        assertNull(minPathBellmanFord.minPath(graph, source, null));
     }
 
     @Test
     public void testMinPathTwoVertecesOneEdge() {
         SparseGraph graph = new SparseGraph();
-        String source = "A";
-        String dest = "B";
+        Vertex source = new Vertex("A");
+        Vertex dest = new Vertex("B");
 
         graph.addVertex(source);
         graph.addVertex(dest);
 
-        graph.addEdge(source, dest, 0.0);
+        graph.addEdge(source, dest, new Edge(dest, 0.5));
 
-        MinPathBellmanFord minPathBellmanFord= new MinPathBellmanFord();
-        List<MinPathBellmanFord.Vertex> minPathList = new ArrayList<MinPathBellmanFord.Vertex>();
-        minPathList.add(new Vertex(source));
-        minPathList.add(new Vertex(dest));
+        MinPathBellmanFord minPathBellmanFord = new MinPathBellmanFord();
+        List<Vertex> minPathList = new ArrayList<Vertex>();
+        minPathList.add(source);
+        minPathList.add(dest);
 
-        assertEquals(minPathBellmanFord.minPath(graph, new Vertex(source), new Vertex(dest)), minPathList);
+        List<Vertex> listObtained = minPathBellmanFord.minPath(graph, source, dest);
+
+        int counter = 0;
+
+        for (Vertex v1 : listObtained)
+            for(Vertex v2 : minPathList)
+                if(v1.compareVertices(v2))
+                    counter++;
+
+        assertEquals(counter, listObtained.size());
     }
 
 
     @Test
     public void testMinPathOneVertexOneEdge() {
         SparseGraph graph = new SparseGraph();
-        String source = "A";
+        Vertex source = new Vertex("A");
         graph.addVertex(source);
-        graph.addEdge(source, source, 0.0);
-        MinPathBellmanFord minPathBellmanFord= new MinPathBellmanFord();
+        graph.addEdge(source, source, new Edge(source, 0.0));
+        MinPathBellmanFord minPathBellmanFord = new MinPathBellmanFord();
 
-        List<MinPathBellmanFord.Vertex> minPathList = new ArrayList<MinPathBellmanFord.Vertex>();
-        minPathList.add(new Vertex(source));;
+        List<Vertex> minPathList = new ArrayList<Vertex>();
+        minPathList.add(source);
 
-        assertEquals(minPathBellmanFord.minPath(graph, new Vertex(source), new Vertex(source)), minPathList);
+        List<Vertex> listObtained = minPathBellmanFord.minPath(graph, source, source);
+
+        int counter = 0;
+
+        for (Vertex v1 : listObtained)
+            for(Vertex v2 : minPathList)
+                if(v1.compareVertices(v2))
+                    counter++;
+
+        assertEquals(counter, listObtained.size());
     }
 
 
@@ -110,29 +113,33 @@ public class MinPathBellmanFordTest {
     @Test
     public void testMinPathFourEdges() {
         SparseGraph graph = new SparseGraph();
-        String source = "A";
-        String dest = "E";
-        graph.addVertex(source);
-        graph.addVertex("B");
-        graph.addVertex("C");
-        graph.addVertex("D");
-        graph.addVertex(dest);
+        Vertex vertex1 =  new Vertex("A");
+        Vertex vertex2 = new Vertex("B");
+        Vertex vertex3 = new Vertex("C");
+        Vertex vertex4 =  new Vertex("D");
+        Vertex vertex5 =  new Vertex("E");
 
-        graph.addEdge("A", "B", 1.0);
-        graph.addEdge("A", "C", 1.5);
-        graph.addEdge("A", "D", 2.0);
-        graph.addEdge("B", "E", 0.5);
+        graph.addVertex(vertex1);
+        graph.addVertex(vertex2);
+        graph.addVertex(vertex3);
+        graph.addVertex(vertex4);
+        graph.addVertex(vertex5);
+
+        graph.addEdge(vertex1, vertex2, new Edge(vertex2, 0.0));
+        graph.addEdge(vertex1, vertex3, new Edge(vertex3, 1.5));
+        graph.addEdge(vertex1, vertex4, new Edge(vertex2, 2.0));
+        graph.addEdge(vertex2, vertex5, new Edge(vertex2, 0.5));
 
 
 
         MinPathBellmanFord minPathBellmanFord= new MinPathBellmanFord();
 
-        List<MinPathBellmanFord.Vertex> minPathList = new ArrayList<MinPathBellmanFord.Vertex>();
-        minPathList.add(new Vertex(source));
-        minPathList.add(new Vertex("B"));
-        minPathList.add(new Vertex(dest));
+        List<Vertex> minPathList = new ArrayList<Vertex>();
+        minPathList.add(vertex1);
+        minPathList.add(vertex2);
+        minPathList.add(vertex3);
 
-        assertEquals(minPathBellmanFord.minPath(graph, new Vertex(source), new Vertex(dest)), minPathList);
+        assertEquals(minPathBellmanFord.minPath(graph, vertex1, vertex2), minPathList);
     }
 
 

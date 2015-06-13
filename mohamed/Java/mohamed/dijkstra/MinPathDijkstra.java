@@ -4,8 +4,8 @@ import mohamed.graphs.Graph;
 
 import java.util.*;
 import java.util.function.DoubleSupplier;
-import mohamed.dijkstra.MinPathDijkstra.Vertex;
-import mohamed.dijkstra.MinPathDijkstra.Edge;
+import mohamed.graphs.SparseGraph.Vertex;
+import mohamed.graphs.SparseGraph.Edge;
 
 /**
  *
@@ -56,41 +56,6 @@ public class MinPathDijkstra <V, E extends DoubleSupplier>{
 
     }
 
-    /**
-     * Class that represent a vertex
-     */
-    static class Vertex implements Comparable<Vertex>
-    {
-        public final String name;
-        public Edge[] adjacencies;
-        public double minDistance = Double.POSITIVE_INFINITY;
-        public Vertex previous;
-        public Vertex(String argName) { name = argName; }
-        public String toString() { return name; }
-        public int compareTo(Vertex other)
-        {
-            return Double.compare(minDistance, other.minDistance);
-        }
-    }
-
-    /**
-     * Class that represent an edge
-     */
-    static class Edge implements DoubleSupplier
-    {
-        public final Vertex target;
-        public final double weight;
-        public Edge(Vertex argTarget, double argWeight)
-        { target = argTarget; weight = argWeight; }
-
-        public double getAsDouble() {
-            return weight;
-        }
-
-        public Vertex getTarget(){
-            return target;
-        }
-    }
 }
 
 

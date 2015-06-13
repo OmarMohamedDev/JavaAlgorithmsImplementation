@@ -3,11 +3,13 @@ package mohamed.graphs;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import mohamed.graphs.SparseGraph.Vertex;
+import mohamed.graphs.SparseGraph.Edge;
 
 /**
  * @author Omar Mohamed
  */
-public class DepthFirstSearch implements GraphSearch<String, Double> {
+public class DepthFirstSearch implements GraphSearch<Vertex, Edge> {
 
     private HashMap hMIndex;
     private HashMap hMVisited;
@@ -20,21 +22,21 @@ public class DepthFirstSearch implements GraphSearch<String, Double> {
      * @param source starting vertex of the visit
      * @param callback  object that analyse vertices and edges during the visit
      */
-    public void search(Graph<String, Double> graph, String source, SearchCallback<String, Double> callback) {
+    public void search(Graph<Vertex, Edge> graph, Vertex source, SearchCallback<Vertex, Edge> callback) {
         graph.hasVertex(source);
-        ArrayList<String> ALVertices = (ArrayList<String>)graph.getVertices();
+        ArrayList<Vertex> ALVertices = (ArrayList<Vertex>)graph.getVertices();
         hMIndex = new HashMap();
         hMVisited = new HashMap();
         hMFather = new HashMap();
 
-        for (Iterator<String> it = ALVertices.iterator(); it.hasNext();) {
-            String temp = it.next();
-            hMIndex.put(temp, ALVertices.indexOf((String)temp));
+        for (Iterator<Vertex> it = ALVertices.iterator(); it.hasNext();) {
+            Vertex temp = it.next();
+            hMIndex.put(temp, ALVertices.indexOf((Vertex)temp));
             hMVisited.put(temp, false);
             hMFather.put(temp, null);
         }
         callback.onVisitingVertex(source);
-        for(String vertex:ALVertices){
+        for(Vertex vertex:ALVertices){
             if(!(Boolean)hMVisited.get(vertex))
                 recursiveVisit( graph,  vertex, callback);
         }
@@ -48,11 +50,11 @@ public class DepthFirstSearch implements GraphSearch<String, Double> {
      * @param vertex starting vertex of the visit
      * @param callback  object that analyse vertices and edges during the visit
      */
-    private void recursiveVisit(Graph graph, String vertex, SearchCallback<String, Double> callback){
-        ArrayList<String> neighbors = (ArrayList<String>)graph.getNeighbours(vertex);
+    private void recursiveVisit(Graph graph, Vertex vertex, SearchCallback<Vertex, Edge> callback){
+        ArrayList<Vertex> neighbors = (ArrayList<Vertex>)graph.getNeighbours(vertex);
         if(neighbors == null) return;
         hMVisited.put(vertex,true);
-        for(String neighbor: neighbors){
+        for(Vertex neighbor: neighbors){
             if(!(Boolean)hMVisited.get(neighbor)){
                 callback.onVisitingVertex(neighbor);
                 hMFather.put(neighbor, vertex);
