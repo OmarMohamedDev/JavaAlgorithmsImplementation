@@ -2,9 +2,7 @@ package mohamed.bellmanford;
 
 import mohamed.graphs.Graph;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.function.DoubleSupplier;
 import mohamed.graphs.SparseGraph.Vertex;
 import mohamed.graphs.SparseGraph.Edge;
@@ -14,42 +12,39 @@ import mohamed.graphs.SparseGraph.Edge;
  */
 public class MinPathBellmanFord <V, E extends DoubleSupplier>{
 
-    /**
-     * Returns the list of vertices on the minimum path between the
-     * source "s" and the destination "d".
-     * Returns null if a minimum path between "s" and "d" doesn't exists.
-     * @author Omar Mohamed
-     */
-    public List<V> minPath(Graph<V,E> graph, V source, V dest) {
-        if(graph == null || !graph.getVertices().contains(source) || !graph.getVertices().contains(dest)) return null;
+    ArrayList<V> path;
+    int n;
 
+    public List<V> minPath(Graph<V, E> graph, V source, V dest) {
 
-        ((Vertex)source).minDistance = 0.;
-        ArrayList<V> ALVertices = (ArrayList<V>)graph.getVertices();
+        path = new ArrayList<V>();
+        n = graph.getVertices().size();
 
-        for(int i=0;i<= ALVertices.size() ; i++)
-        {
-            // Visit each edge exiting u
-            for (Edge e : ((Vertex)ALVertices.get(i)).adjacencies)
-            {
-                Vertex u = (Vertex)ALVertices.get(i);
-                Vertex v = e.target;
-                double weight = e.weight;
-                double distanceThroughU = u.minDistance + weight;
-                if (distanceThroughU < v.minDistance) {
-                    v.minDistance = distanceThroughU ;
-                    v.previous = u;
+        ArrayList<V> vertex = (ArrayList<V>)graph.getVertices();
+
+        ((Vertex)source).previous = (Vertex)source;
+        ((Vertex)source).minDistance = 0.0;
+        //Adding the source in the final list
+        path.add(source);
+
+        for(int i=0;i<=n;i++){
+            for(V u :vertex){
+                for(Edge e : ((Vertex)u).adjacencies){
+                    double weight = ((Edge)e).getAsDouble();
+                    V v = (V)((Edge)e).getTarget();
+                    double distanceThroughU = ((Vertex)u).minDistance + weight;
+                    if(distanceThroughU<((Vertex)v).minDistance){
+                        ((Vertex)v).minDistance = distanceThroughU ;
+                        ((Vertex)v).previous = (Vertex)u;
+                        //Adding elements in the final list
+                        path.add(v);
+                    }
                 }
             }
         }
 
 
-        List<V> path = new ArrayList<V>();
-        for (Vertex vertex = (Vertex)dest; vertex != null; vertex = vertex.previous)
-            path.add((V)vertex);
-        Collections.reverse(path);
         return path;
-
     }
 
 

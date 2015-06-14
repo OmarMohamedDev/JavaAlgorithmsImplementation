@@ -2,13 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="975511d0-b835-48b8-8c18-e553d8eecd7b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/laboratoriodialgoritmi/mohamed/graphs/BreadthFirstSearchTest.class" afterPath="$PROJECT_DIR$/out/production/laboratoriodialgoritmi/mohamed/graphs/BreadthFirstSearchTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/laboratoriodialgoritmi/mohamed/graphs/SearchCallbackImpl.class" afterPath="$PROJECT_DIR$/out/production/laboratoriodialgoritmi/mohamed/graphs/SearchCallbackImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mohamed/Java/mohamed/graphs/BreadthFirstSearchTest.java" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/graphs/BreadthFirstSearchTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/binarysearch/SortedArrayList.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/binarysearch/SortedArrayListTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/laboratoriodialgoritmi/mohamed/binarysearch/IntSortedArray.class" afterPath="$PROJECT_DIR$/out/production/laboratoriodialgoritmi/mohamed/binarysearch/IntSortedArray.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/laboratoriodialgoritmi/mohamed/bellmanford/MinPathBellmanFord.class" afterPath="$PROJECT_DIR$/out/production/laboratoriodialgoritmi/mohamed/bellmanford/MinPathBellmanFord.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/laboratoriodialgoritmi/mohamed/bellmanford/MinPathBellmanFordTest.class" afterPath="$PROJECT_DIR$/out/production/laboratoriodialgoritmi/mohamed/bellmanford/MinPathBellmanFordTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/laboratoriodialgoritmi/mohamed/sort/Sorting$ParallelMergeSorter.class" afterPath="$PROJECT_DIR$/out/production/laboratoriodialgoritmi/mohamed/sort/Sorting$ParallelMergeSorter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/laboratoriodialgoritmi/mohamed/sort/Sorting$ParallelQuickSorter.class" afterPath="$PROJECT_DIR$/out/production/laboratoriodialgoritmi/mohamed/sort/Sorting$ParallelQuickSorter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/laboratoriodialgoritmi/mohamed/sort/Sorting.class" afterPath="$PROJECT_DIR$/out/production/laboratoriodialgoritmi/mohamed/sort/Sorting.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mohamed/Java/mohamed/binarysearch/IntSortedArray.java" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/binarysearch/IntSortedArray.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mohamed/Java/mohamed/bellmanford/MinPathBellmanFord.java" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/bellmanford/MinPathBellmanFord.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mohamed/Java/mohamed/bellmanford/MinPathBellmanFordTest.java" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/bellmanford/MinPathBellmanFordTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mohamed/Java/mohamed/dijkstra/MinPathDijkstra.java" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/dijkstra/MinPathDijkstra.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mohamed/Java/mohamed/dijkstra/MinPathDijkstraTest.java" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/dijkstra/MinPathDijkstraTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mohamed/Java/mohamed/graphs/SearchCallbackImpl.java" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/graphs/SearchCallbackImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mohamed/Java/mohamed/sort/Sorting.java" afterPath="$PROJECT_DIR$/mohamed/Java/mohamed/sort/Sorting.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laboratoriodialgoritmi.iws" />
@@ -36,7 +41,38 @@
     <favorites_list name="laboratoriodialgoritmi" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Sorting.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/sort/Sorting.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6169154">
+              <caret line="190" column="5" selection-start-line="190" selection-start-column="5" selection-end-line="190" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SortingTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/sort/SortingTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="500" column="9" selection-start-line="500" selection-start-column="9" selection-end-line="500" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SortTiming.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/sort/SortTiming.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="110" column="29" selection-start-line="110" selection-start-column="29" selection-end-line="110" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,8 +92,6 @@
         <option value="$PROJECT_DIR$/src/mohamed/esercizio1/IntSortedArray.java" />
         <option value="$PROJECT_DIR$/mohamed/Java/mohamed/esercizio1/IntSortedArray.java" />
         <option value="$PROJECT_DIR$/mohamed/Java/mohamed/esercizio1/IntSortedArrayTest.java" />
-        <option value="$PROJECT_DIR$/mohamed/Java/mohamed/binarysearch/IntSortedArray.java" />
-        <option value="$PROJECT_DIR$/mohamed/Java/mohamed/sort/Sorting.java" />
         <option value="$PROJECT_DIR$/mohamed/Java/mohamed/sort/SortingTest.java" />
         <option value="$PROJECT_DIR$/mohamed/Java/mohamed/sort/SortTiming.java" />
         <option value="$PROJECT_DIR$/mohamed/Java/mohamed/priorityqueue/PriorityQueueStringDouble.java" />
@@ -94,8 +128,13 @@
         <option value="$PROJECT_DIR$/mohamed/Java/mohamed/graphs/BreadthFirstSearchTest.java" />
         <option value="$PROJECT_DIR$/mohamed/Java/mohamed/dijkstra/MinPathDijkstraTest.java" />
         <option value="$PROJECT_DIR$/mohamed/Java/mohamed/dijkstra/MinPathDijkstra.java" />
-        <option value="$PROJECT_DIR$/mohamed/Java/mohamed/bellmanford/MinPathBellmanFordTest.java" />
+        <option value="$PROJECT_DIR$/mohamed/Java/mohamed/binarysearch/SortedArrayTest.java" />
+        <option value="$PROJECT_DIR$/mohamed/Java/mohamed/binarysearch/IntSortedArray.java" />
+        <option value="$PROJECT_DIR$/mohamed/Java/mohamed/binarysearch/SortedArrayListTest.java" />
+        <option value="$PROJECT_DIR$/mohamed/Java/mohamed/binarysearch/SortedArrayList.java" />
+        <option value="$PROJECT_DIR$/mohamed/Java/mohamed/sort/Sorting.java" />
         <option value="$PROJECT_DIR$/mohamed/Java/mohamed/bellmanford/MinPathBellmanFord.java" />
+        <option value="$PROJECT_DIR$/mohamed/Java/mohamed/bellmanford/MinPathBellmanFordTest.java" />
       </list>
     </option>
   </component>
@@ -112,6 +151,9 @@
   </component>
   <component name="NamedScopeManager">
     <order />
+  </component>
+  <component name="PhpServers">
+    <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
@@ -160,7 +202,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -215,10 +256,63 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laboratoriodialgoritmi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laboratoriodialgoritmi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mohamed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mohamed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dijkstra" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laboratoriodialgoritmi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laboratoriodialgoritmi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mohamed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mohamed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bellmanford" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -260,36 +354,11 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="mohamed.esercizio1" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="mohamed.binarysearch" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.mohamed.dijkstra in laboratoriodialgoritmi">
-    <configuration default="false" name="mohamed.unionfind in laboratoriodialgoritmi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="mohamed.unionfind.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="laboratoriodialgoritmi" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="mohamed.unionfind" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.mohamed in laboratoriodialgoritmi">
     <configuration default="false" name="mohamed.graphs in laboratoriodialgoritmi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -386,6 +455,58 @@
       <patterns />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="mohamed.binarysearch in laboratoriodialgoritmi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="mohamed.binarysearch.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="laboratoriodialgoritmi" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="mohamed.binarysearch" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="mohamed in laboratoriodialgoritmi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="mohamed.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="laboratoriodialgoritmi" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="mohamed" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -652,18 +773,20 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.mohamed.unionfind in laboratoriodialgoritmi" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.mohamed.graphs in laboratoriodialgoritmi" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.mohamed.dijkstra in laboratoriodialgoritmi" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.mohamed.bellmanford in laboratoriodialgoritmi" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.mohamed.graphs in laboratoriodialgoritmi" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.mohamed.dijkstra in laboratoriodialgoritmi" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.mohamed.bellmanford in laboratoriodialgoritmi" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.mohamed.binarysearch in laboratoriodialgoritmi" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.mohamed in laboratoriodialgoritmi" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.mohamed.dijkstra in laboratoriodialgoritmi" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.mohamed.graphs in laboratoriodialgoritmi" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.mohamed.bellmanford in laboratoriodialgoritmi" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.mohamed.unionfind in laboratoriodialgoritmi" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.mohamed in laboratoriodialgoritmi" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.mohamed.binarysearch in laboratoriodialgoritmi" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.mohamed.dijkstra in laboratoriodialgoritmi" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.mohamed.graphs in laboratoriodialgoritmi" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.mohamed.bellmanford in laboratoriodialgoritmi" />
       </list>
     </recent_temporary>
   </component>
@@ -712,30 +835,32 @@
       <workItem from="1434094594906" duration="125000" />
       <workItem from="1434094758725" duration="275000" />
       <workItem from="1434095112654" duration="23000" />
-      <workItem from="1434095156925" duration="18892000" />
+      <workItem from="1434095156925" duration="20093000" />
+      <workItem from="1434201239666" duration="15553000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171621000" />
+    <option name="totallyTimeSpent" value="188375000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="743" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3276923" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3246154" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32923076" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34153846" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27086383" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1727672" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3276923" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -751,7 +876,6 @@
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329429" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32923076" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3276923" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -774,8 +898,14 @@
           <properties />
           <option name="timeStamp" value="63" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mohamed/Java/mohamed/binarysearch/SortedArrayList.java</url>
+          <line>84</line>
+          <properties />
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="65" />
+      <option name="time" value="68" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -784,27 +914,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/binarysearch/IntSortedArray.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/sort/Sorting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/sort/SortingTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/sort/SortTiming.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -903,13 +1012,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/binarysearch/IntSortedArray.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25609756">
-          <caret line="139" column="23" selection-start-line="139" selection-start-column="23" selection-end-line="139" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/sort/quadraticTimes.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -921,20 +1023,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/sort/SortTiming.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1364366">
-          <caret line="110" column="29" selection-start-line="110" selection-start-column="29" selection-end-line="110" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/sort/Sorting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.4622793">
-          <caret line="403" column="26" selection-start-line="403" selection-start-column="26" selection-end-line="403" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -970,13 +1058,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9878049">
           <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/sort/SortingTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="9.797561">
-          <caret line="500" column="9" selection-start-line="500" selection-start-column="9" selection-end-line="500" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1040,7 +1121,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1048,7 +1128,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.25609756">
           <caret line="7" column="75" selection-start-line="7" selection-start-column="75" selection-end-line="7" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1056,7 +1135,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29268292">
           <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1065,7 +1143,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1074,15 +1152,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3682927">
           <caret line="65" column="77" selection-start-line="65" selection-start-column="77" selection-end-line="65" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3881#3889#0" expanded="true" />
-            <element signature="e#4166#4174#0" expanded="true" />
-            <element signature="e#4565#4573#0" expanded="true" />
-            <element signature="e#5028#5036#0" expanded="true" />
-            <element signature="e#6428#6436#0" expanded="true" />
-            <element signature="e#7094#7102#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1090,9 +1159,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36585367">
           <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1100,9 +1166,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33144477">
           <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1111,7 +1174,7 @@
         <state vertical-scroll-proportion="0.3219512">
           <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1120,26 +1183,99 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11221945">
           <caret line="117" column="4" selection-start-line="117" selection-start-column="4" selection-end-line="144" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/graphs/SparseGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.369077">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#464#481#0" expanded="false" />
+            <element signature="e#550#567#0" expanded="false" />
+            <element signature="e#942#950#0" expanded="false" />
+            <element signature="e#4806#4814#0" expanded="false" />
+            <element signature="e#5372#5380#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/dijkstra/MinPathDijkstra.java">
+    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/binarysearch/IntSortedArray.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47880298">
-          <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+        <state vertical-scroll-proportion="2.057143">
+          <caret line="48" column="31" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/jdk1.8.0_45/src.zip!/java/lang/Comparable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7051597">
+          <caret line="135" column="15" selection-start-line="135" selection-start-column="15" selection-end-line="135" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/jdk1.8.0_45/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="443" column="0" selection-start-line="443" selection-start-column="0" selection-end-line="443" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/binarysearch/SortedArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.2486632">
+          <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
+          <folding>
+            <element signature="e#386#387#0" expanded="true" />
+            <element signature="e#433#434#0" expanded="true" />
+            <element signature="e#1511#1512#0" expanded="true" />
+            <element signature="e#1549#1550#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/binarysearch/SortedArrayListTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.49253732">
+          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#283#284#0" expanded="true" />
+            <element signature="e#335#336#0" expanded="true" />
+            <element signature="e#1825#1826#0" expanded="true" />
+            <element signature="e#1873#1874#0" expanded="true" />
+            <element signature="e#2321#2322#0" expanded="true" />
+            <element signature="e#2347#2348#0" expanded="true" />
+            <element signature="e#3071#3072#0" expanded="true" />
+            <element signature="e#3121#3122#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/sort/SortingTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="500" column="9" selection-start-line="500" selection-start-column="9" selection-end-line="500" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/sort/SortTiming.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="110" column="29" selection-start-line="110" selection-start-column="29" selection-end-line="110" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/dijkstra/MinPathDijkstraTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7755611">
-          <caret line="158" column="5" selection-start-line="116" selection-start-column="3" selection-end-line="158" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="113" column="51" selection-start-line="104" selection-start-column="8" selection-end-line="113" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2033#2041#0" expanded="true" />
@@ -1149,42 +1285,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/graphs/SparseGraph.java">
+    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/bellmanford/MinPathBellmanFordTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.369077">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6268657">
+          <caret line="164" column="5" selection-start-line="164" selection-start-column="5" selection-end-line="164" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#464#481#0" expanded="true" />
-            <element signature="e#550#567#0" expanded="true" />
-            <element signature="e#942#950#0" expanded="true" />
-            <element signature="e#4806#4814#0" expanded="true" />
-            <element signature="e#5372#5380#0" expanded="true" />
+            <element signature="e#1130#1138#0" expanded="true" />
+            <element signature="e#1879#1887#0" expanded="true" />
+            <element signature="e#2687#2695#0" expanded="true" />
+            <element signature="e#3455#3463#0" expanded="true" />
+            <element signature="e#4707#4715#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/bellmanford/MinPathBellmanFordTest.java">
+    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/dijkstra/MinPathDijkstra.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40399003">
-          <caret line="174" column="54" selection-start-line="174" selection-start-column="54" selection-end-line="174" selection-end-column="54" />
+        <state vertical-scroll-proportion="1.0447761">
+          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1996#2004#0" expanded="true" />
-            <element signature="e#2764#2772#0" expanded="true" />
-            <element signature="e#4016#4024#0" expanded="true" />
-            <element signature="e#5229#5237#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/bellmanford/MinPathBellmanFord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.037406486">
-          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.23880596">
+          <caret line="22" column="64" selection-start-line="22" selection-start-column="64" selection-end-line="22" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mohamed/Java/mohamed/sort/Sorting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6169154">
+          <caret line="190" column="5" selection-start-line="190" selection-start-column="5" selection-end-line="190" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

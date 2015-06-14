@@ -14,7 +14,7 @@ public class IntSortedArray {
     /**
      * Number of elements that are actually inside the "elements" array
      */
-    protected int size;
+    int size;
 
     /**
      * Public constructor that initialize the elements array of 16 elements
@@ -45,12 +45,11 @@ public class IntSortedArray {
      * @param a array of int
      */
     public IntSortedArray(int[] a){
-        elements = new int[a.length + 16];
+        size = a.length + 16;
+        elements = new int[size];
 
         for(int i=0; i<a.length; i++)
             elements[i] = a[i];
-
-        size = a.length;
     }
 
     //Public methods
@@ -145,7 +144,7 @@ public class IntSortedArray {
      * @return the position of the element if is already inside the array,
      * the position where we want to insert it otherwise.
      */
-    protected int binarySearch(int x){
+    int binarySearch(int x){
         int inf = 0;
         int sup = size() -1;
 
@@ -175,7 +174,7 @@ public class IntSortedArray {
      * Method that permit to reallocate the elements array in another one
      * that will be the double of the previous dimension
      */
-    protected void reallocate(){
+    void reallocate(){
         int i = 0;
         int newElements[] = new int[2 * elements.length];
         while (i < elements.length) {
