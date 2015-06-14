@@ -13,7 +13,10 @@ import mohamed.graphs.SparseGraph.Edge;
  */
 public class MinPathDijkstra <V, E extends DoubleSupplier>{
 
-
+    /**
+     * List that have to be returned with the nodes of the shortest path
+     */
+    List<V> path;
     /**
      * Returns the list of vertices on the shortest path between a source
      * "source" and a destination "dest". The algorithm returns the empty
@@ -21,13 +24,13 @@ public class MinPathDijkstra <V, E extends DoubleSupplier>{
      * @param graph graph where we want to apply the dijkstra algorithm
      * @param source starting vertex of the path
      * @param dest ending vertex of the path
-     * @return the list of vertices of the shortest path if exists, null otherwise
+     * @return the list of vertices of the shortest path if exists, an empty list otherwise
      */
     public List<V> minPath(Graph<V, E> graph, V source, V dest) {
         if(graph == null || source == null || dest == null || !graph.hasVertex(source)|| !graph.hasVertex(dest)) return null;
 
         //Shortest path list that we have to return
-        List<V> path = new ArrayList<V>();
+        path= new ArrayList<V>();
 
         ((Vertex)source).minDistance = 0.0;
 

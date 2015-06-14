@@ -11,7 +11,7 @@ import java.util.concurrent.RecursiveAction;
 public class Sorting {
 
     /**
-     * Object used to generate random numbers in some methods (as the quicksort)
+     * Object used to generate random numbers in some method (as the quicksort)
      */
     static Random randomGenerator = new Random();
 
@@ -108,42 +108,7 @@ public class Sorting {
      * @param a array that have to be ordered
      */
     public static void msortBasic(int[] a){
-
         msortBasicIntern(a, 0, a.length - 1);
-    }
-
-    /**
-     * Not public method that implements the basic mergesort
-     * @param a array that we want to order
-     * @param first index of the element that represent the left extreme of the segment that we want to order
-     * @param last index of the element that represent the right extreme of the segment that we want to order
-     */
-    static void msortBasicIntern(int[] a, int first, int last){
-        if(first >= last) return;
-        int m = (first+last)>>>1;
-        msortBasicIntern(a, first, m);
-        msortBasicIntern(a, m+1,last);
-        mergeBasic(a, first, m, last);
-    }
-
-    /**
-     * Method that implements the merge of an two adjacent segments in an array
-     * @param a array that contains the segments
-     * @param fst index that represent the left extreme of the segment
-     * @param mid index that represent the middle of the segment
-     * @param lst index that represent the right extreme of the segment
-     */
-    static void mergeBasic(int[] a, int fst, int mid, int lst) {
-        int n = lst - fst + 1;
-        int i,j,k;
-        int[] c = new int[n];
-        i = fst; j = mid+1; k = 0;
-        while(i <= mid && j <= lst) {
-            c[k++] = a[i]<= a[j] ? a[i++] : a[j++];
-        }
-        while(i <= mid) c[k++] = a[i++];
-        while(j <= lst) c[k++] = a[j++];
-        for(int h = 0; h < n; h++) a[fst + h] = c[h];
     }
 
     /**
@@ -155,39 +120,6 @@ public class Sorting {
         int n = a.length;
         int[] aux = new int[n];
         msortNoGarbageIntern(a, 0, n - 1, aux);
-    }
-
-    /**
-     * Not public method that implements a version of the mergesort with an auxiliary array and an optimized mergesort
-     * @param a array that we want to order
-     * @param first index of the element that represent the left extreme of the segment that we want to order
-     * @param last index of the element that represent the right extreme of the segment that we want to order
-     * @param aux auxiliary array used to avoid to create a new one every time that we merge
-     */
-    static void msortNoGarbageIntern(int[] a, int first, int last, int[] aux){
-        if(first >= last) return;
-        int m = (first+last)>>>1;
-        msortNoGarbageIntern(a, first, m, aux);
-        msortNoGarbageIntern(a, m + 1, last, aux);
-        mergeNoGarbage(a, first, m, last, aux);
-    }
-
-    /**
-     * Method that implements an optimized version of the merge of an two adjacent
-     * segements in an array using an auxiliary array
-     * @param a array that contains the segments
-     * @param fst index that represent the0 left extreme of the segment
-     * @param mid index that represent the middle of the segment
-     * @param lst index that represent the right extreme of the segment
-     * @param aux auxiliary array used during the merge
-     */
-    static void mergeNoGarbage(int[] a, int fst, int mid, int lst, int[] aux) {
-        int i = fst, j = mid+1, k = fst;
-        while(i <= mid && j <= lst) {
-            aux[k++] = a[i]<= a[j] ? a[i++] : a[j++];
-        }
-        for(int h = mid, l = lst; h >= i;) a[l--] = a[h--];
-        for(int r = fst; r < k; r++) a[r] = aux[r];
     }
 
     /**
@@ -252,8 +184,10 @@ public class Sorting {
      */
     public static void hsort(int[] a){
         int n = a.length;
+        //Heapify process starting from the last internal node (the leaves are already heaps)
         for(int j = (n-2)/2; j >= 0; j--)
             moveDown(a, j, n);
+        //
         for(int i = n-1; i > 0; i--) {
             swap(a, 0, i);
             moveDown(a, 0, i);
@@ -293,7 +227,43 @@ public class Sorting {
         return ini;
     }
 
+    /**
+     * Method that implements the merge of an two adjacent segements in an array
+     * @param a array that contains the segments
+     * @param fst index that represent the left extreme of the segment
+     * @param mid index that represent the middle of the segment
+     * @param lst index that represent the right extreme of the segment
+     */
+    static void mergeBasic(int[] a, int fst, int mid, int lst) {
+        int n = lst - fst + 1;
+        int i,j,k;
+        int[] c = new int[n];
+        i = fst; j = mid+1; k = 0;
+        while(i <= mid && j <= lst) {
+            c[k++] = a[i]<= a[j] ? a[i++] : a[j++];
+        }
+        while(i <= mid) c[k++] = a[i++];
+        while(j <= lst) c[k++] = a[j++];
+        for(int h = 0; h < n; h++) a[fst + h] = c[h];
+    }
 
+    /**
+     * Method that implements an optimized version of the merge of an two adjacent
+     * segements in an array using an auxiliary array
+     * @param a array that contains the segments
+     * @param fst index that represent the left extreme of the segment
+     * @param mid index that represent the middle of the segment
+     * @param lst index that represent the right extreme of the segment
+     * @param aux auxiliary array used during the merge
+     */
+    static void mergeNoGarbage(int[] a, int fst, int mid, int lst, int[] aux) {
+        int i = fst, j = mid+1, k = fst;
+        while(i <= mid && j <= lst) {
+            aux[k++] = a[i]<= a[j] ? a[i++] : a[j++];
+        }
+        for(int h = mid, l = lst; h >= i;) a[l--] = a[h--];
+        for(int r = fst; r < k; r++) a[r] = aux[r];
+    }
 
     /**
      * Method that implements an alternative version of the merge of two adjacent
@@ -314,7 +284,34 @@ public class Sorting {
         while(j <= lst) aux[k++] = a[j++];
     }
 
+    /**
+     * Not public method that implements the basic mergesort
+     * @param a array that we want to order
+     * @param first index of the element that represent the left extreme of the segment that we want to order
+     * @param last index of the element that represent the right extreme of the segment that we want to order
+     */
+    static void msortBasicIntern(int[] a, int first, int last){
+        if(first >= last) return;
+        int m = (first+last)>>>1;
+        msortBasicIntern(a, first, m);
+        msortBasicIntern(a, m+1,last);
+        mergeBasic(a, first, m, last);
+    }
 
+    /**
+     * Not public method that implements a version of the mergesort with an auxiliary array and an optimized mergesort
+     * @param a array that we want to order
+     * @param first index of the element that represent the left extreme of the segment that we want to order
+     * @param last index of the element that represent the right extreme of the segment that we want to order
+     * @param aux auxiliary array used to avoid to create a new one every time that we merge
+     */
+    static void msortNoGarbageIntern(int[] a, int first, int last, int[] aux){
+        if(first >= last) return;
+        int m = (first+last)>>>1;
+        msortNoGarbageIntern(a, first, m, aux);
+        msortNoGarbageIntern(a, m + 1, last, aux);
+        mergeNoGarbage(a, first, m, last, aux);
+    }
 
     /**
      * Not public method that implements an alternative version of the mergesort that use both the original
@@ -393,7 +390,7 @@ public class Sorting {
     }
 
     /**
-     * Method that implements the move down in a heap, used by the heapsort method
+     * Method that implements the move down in a max-heap, used by the heapsort method
      * @param a array that we want to modify
      * @param i index of the element that we want to "move down"
      * @param length length of the segment of the array used by the heap
@@ -406,7 +403,7 @@ public class Sorting {
             if(j+1 < length && a[j+1] > a[j]) j++;
             if(elem >= a[j]) break;
             a[i] = a[j];
-                    i = j;
+            i = j;
         }
         a[i] = elem;
     }

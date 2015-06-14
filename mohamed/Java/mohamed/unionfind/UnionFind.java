@@ -78,7 +78,7 @@ public class UnionFind {
         int root2 = find(b);
         if(root1 == root2) return false;
         if(parentOrMinusSize[root2] < parentOrMinusSize[root1]) {
-            //Chaning the size of the root
+            //Changing the size of the root
             parentOrMinusSize[root1] += parentOrMinusSize[root2];
             //Making root1 the root of the other set
             parentOrMinusSize[root2] = root1;

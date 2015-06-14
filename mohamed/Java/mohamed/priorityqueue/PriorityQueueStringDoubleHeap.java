@@ -160,7 +160,7 @@ public class PriorityQueueStringDoubleHeap implements PriorityQueueStringDouble{
     }
 
     /**
-     * Method that reallocate an array in another one that will be the double of the original
+     * Method that reallocate an heap in another one that will be the double of the original
      */
     private void reallocate(){
         int dimension = heap.length;

@@ -5,7 +5,7 @@ import com.sun.xml.internal.bind.v2.model.core.EnumLeafInfo;
 import java.util.HashMap;
 
 /**
- * Class that implements a priority queue with arrays
+ * Class that implements a priority queue with not ordered arrays and an hashmap that mantains the positions of the elements
  * @author Omar Mohamed
  */
 public class PriorityQueueStringDoubleSimple implements PriorityQueueStringDouble{
@@ -15,7 +15,7 @@ public class PriorityQueueStringDoubleSimple implements PriorityQueueStringDoubl
     private final HashMap<String, Integer> position = new HashMap<String, Integer>();
 
     /**
-     * PRECONDITION: elem.length==prior.length.
+     * PRECONDITION: elem.length==prior.length. and the prior[i] is realated to the elem[i], with 0 <= i <= length
      * Create an array of dimension elem.length containing the elements in elem with priority prior
      *
      * @param elem array of string containing the value of the elements
@@ -42,7 +42,7 @@ public class PriorityQueueStringDoubleSimple implements PriorityQueueStringDoubl
     /**
      * Create an empty array with length n
      *
-     * @param n max dimension for the heap
+     * @param n max dimension for the array
      */
     public PriorityQueueStringDoubleSimple(int n) {
         array = new PriorityElem[n];
@@ -154,12 +154,12 @@ public class PriorityQueueStringDoubleSimple implements PriorityQueueStringDoubl
     private void reallocate(){
         int dimension = array.length;
 
-        PriorityElem[] newHeap = new PriorityElem[dimension*2];
+        PriorityElem[] newArray = new PriorityElem[dimension*2];
 
         for(int i=0; i<dimension; i++)
-            newHeap[i] = array[i];
+            newArray[i] = array[i];
 
-        array = newHeap;
+        array = newArray;
     }
 
     //Inner class that represent the element with a speficied priority
